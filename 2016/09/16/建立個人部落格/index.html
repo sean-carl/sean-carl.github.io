@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="web,blog,life," />
 
 
 
@@ -104,7 +104,7 @@
 <meta property="og:image" content="http://i.imgur.com/vyyJJb9.png">
 <meta property="og:image" content="http://i.imgur.com/V9DTXGe.png">
 <meta property="og:image" content="http://i.imgur.com/7mu01nK.png">
-<meta property="og:updated_time" content="2016-09-15T19:01:51.000Z">
+<meta property="og:updated_time" content="2016-09-15T19:27:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 Hexo + Github Pages 建立個人部落格">
 <meta name="twitter:description" content="為何要建立個人網站呢？當然純粹是因為這樣比較潮，為了有個地方能夠「分享生活中的觀察」以及「記錄個人所學」。所以需要類似部落格功能的網站，且又不想要使用現有的部落格平台 (因為會和別人的都長一樣)，只好自己來建一個啦！
@@ -290,6 +290,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Skill/" itemprop="url" rel="index">
+                    <span itemprop="name">Skill</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -316,7 +335,7 @@
 <p>從計畫到執行一直到完成過了大概兩週（靠也太久了吧)…<br>上網找了許多方法，原本計畫使用 <a href="https://jekyllrb.com/" target="_blank" rel="external">Jekyll</a>，但是可能因為我的程式基礎太薄弱，不知道為何一直遇到環境上的 Bug，上網找不到解答、前端朋友也建議我直接換個方法重來…終於在中秋連假生出這個網站囉！回到正題：</p>
 <h1 id="如何使用-Hexo-Github-Pages-建立個人部落格"><a href="#如何使用-Hexo-Github-Pages-建立個人部落格" class="headerlink" title="如何使用 Hexo + Github Pages 建立個人部落格"></a>如何使用 Hexo + Github Pages <br>建立個人部落格</h1><p>這篇文章是給自己做記錄，也分享給和我一樣不太懂程式碼的朋友們。<br>以下的參考來源方法都大同小異，此文將以類似『懶人包』的方式記錄步驟，讓「懶得懂」以及像我一樣「一知半解」的朋友們可以快速建立個人部落格。</p>
 <p>如果你是一位資訊人那可以直接參考以下資料來源實作：</p>
-<h3 id="資料參考來源"><a href="#資料參考來源" class="headerlink" title="資料參考來源"></a>資料參考來源</h3><ul>
+<h3 id="零、資料參考來源"><a href="#零、資料參考來源" class="headerlink" title="零、資料參考來源"></a>零、資料參考來源</h3><ul>
 <li><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo 官方教學</a></li>
 <li><a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo 官方主題樣式</a></li>
 <li><a href="http://xuhao.tech/2016/05/06/hexo-github-pages.html" target="_blank" rel="external">基於 Hexo+GitHub Pages 搭建個人博客教程</a></li>
@@ -350,8 +369,7 @@
 <li><a href="https://itunes.apple.com/hk/app/xcode/id497799835?l=zh&amp;mt=12" target="_blank" rel="external">Xcode</a> ( Mac用戶必須安裝 )</li>
 </ul>
 <p><del>解釋以上三樣東西實在太麻煩了直接略過</del>，裝好之後我們可以開啟我們的終端機 Terminal，並輸入以下指令安裝 Hexo：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure>
-<p>安裝完之後我們便可以來建立網站了！</p>
+<p><code>$ npm install -g hexo-cli</code><br>安裝完之後我們便可以來建立網站了！</p>
 <h3 id="四、使用-Hexo-建立網站"><a href="#四、使用-Hexo-建立網站" class="headerlink" title="四、使用 Hexo 建立網站"></a>四、使用 Hexo 建立網站</h3><p>接著開啟我們的終端機 Terminal ，依序使用以下指令：<br><code>$ hexo init yourname</code> ( 意思就是產生一個叫做 yourname 的 hexo網站 )<br><code>$ cd yourname</code> ( 移動到 yourname 的資料夾裡 )<br><code>$ npm install</code> ( 安裝這個網站 )</p>
 <blockquote>
 <p>yourname 就是指在電腦裡的檔案名稱，可以隨意取，例如「hexoproject」。</p>
@@ -365,26 +383,39 @@
 <blockquote>
 <p>username 就是指你自己的github帳號，記得改對，然後按存檔。</p>
 </blockquote>
-<p>然後再次回到你的終端機，並確立現在指令列是否在你的 yourname 資料夾<br>如果沒有的話先使用 <code>cd</code> 移動到 yourname 資料夾<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cd yourname</div></pre></td></tr></table></figure></p>
-<p>並依序輸入以下指令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure>
-<p>這三個指令就是幫我們把網站自動生成並發佈到 <a href="http://username.github.io" target="_blank" rel="external">http://username.github.io</a> 上的指令，完成後應該就可以打開瀏覽器看看自己網站發布成功的樣子囉！</p>
-<h3 id="五、建立視覺化後台並PO文！！"><a href="#五、建立視覺化後台並PO文！！" class="headerlink" title="五、建立視覺化後台並PO文！！"></a>五、建立視覺化後台並PO文！！</h3><p>網站成功上線後我們來試試看po文吧！<br>由於 Hexo 沒有內建的視覺化顯示後台，所以可以先安裝 <a href="https://github.com/nihgwu/hexo-hey" target="_blank" rel="external">Hey Hexo</a> 作為外掛插件 ( 個人覺得這插件不會自動存檔<del>很靠北，讓我的第一篇文差點葛屁</del>，但目前還沒找到更好的方法 ) 。安裝步驟如下：<br>一樣打開你的終端機，確立是否在你的 yourname 資料夾，不然的話一樣先使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cd yourname</div></pre></td></tr></table></figure></p>
-<p>然後安裝 Hey Hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-hey --save</div></pre></td></tr></table></figure></p>
-<p>接著打開文字編輯器，開啟 <code>_config.yml</code>，並滑到最下面新增下列幾行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># Admin</div><div class="line">admin:</div><div class="line">    name: hexo</div><div class="line">    password: hey</div><div class="line">    secret: hey hexo</div><div class="line">    expire: 60*1</div><div class="line">    # cors: http://localhost:3000</div></pre></td></tr></table></figure></p>
+<p>然後再次回到你的終端機，並確立現在指令列是否在你的 yourname 資料夾<br>如果沒有的話先使用 <code>cd</code> 移動到 yourname 資料夾<br><code>$ cd yourname</code><br>並依序輸入以下指令：</p>
+<p><code>$ hexo clean
+$ hexo g
+$ hexo d</code><br>這三個指令就是幫我們把網站自動生成並發佈到 <a href="http://username.github.io" target="_blank" rel="external">http://username.github.io</a> 上的指令，完成後應該就可以打開瀏覽器看看自己網站發布成功的樣子囉！</p>
+<h3 id="五、建立視覺化後台並PO文！！"><a href="#五、建立視覺化後台並PO文！！" class="headerlink" title="五、建立視覺化後台並PO文！！"></a>五、建立視覺化後台並PO文！！</h3><p>網站成功上線後我們來試試看po文吧！<br>由於 Hexo 沒有內建的視覺化顯示後台，所以可以先安裝 <a href="https://github.com/nihgwu/hexo-hey" target="_blank" rel="external">Hey Hexo</a> 作為外掛插件 ( 個人覺得這插件不會自動存檔<del>很靠北，讓我的第一篇文差點葛屁</del>，但目前還沒找到更好的方法 ) 。安裝步驟如下：<br>一樣打開你的終端機，確立是否在你的 yourname 資料夾，不然的話一樣先使用<br><code>$ cd yourname</code><br>然後安裝 Hey Hexo<br><code>$ npm install hexo-hey --save</code><br>接著打開文字編輯器，開啟 <code>_config.yml</code>，並滑到最下面新增下列幾行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># Admin</div><div class="line">admin:</div><div class="line">    name: hexo</div><div class="line">    password: hey</div><div class="line">    secret: hey hexo</div><div class="line">    expire: 60*1</div><div class="line">    # cors: http://localhost:3000</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>這裡的 hexo 及 hey 分別為之後登入後台輸入的帳號跟密碼</p>
 </blockquote>
-<p>按下存檔之後，接著我們可以來po文囉！先讓我們啟動本機端的伺服器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure></p>
-<p>開啟網頁並輸入 <a href="http://localhost:4000/admin" target="_blank" rel="external">http://localhost:4000/admin</a> 進入後台，接著輸入帳密！登登！就會看到像下面這樣子的視覺化後台囉！按下 NEW POST 便可以新增文章了！<br><img src="http://i.imgur.com/7mu01nK.png" alt="Imgur"><br>如果你對 Markdown 的語法還不熟，可以一邊打一邊試試看各種標籤，這個後台的好處就是會即時顯示內容！不過切記切記，因為它不會自動儲存，打了一小段後就要記得定時存檔 (可以存成草稿就好)，等文章打完後再按下 PUBLISH 就大功告成啦！可以直接在本機端 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 看看是否成功！</p>
+<p>按下存檔之後，接著我們可以來po文囉！先讓我們啟動本機端的伺服器<br><code>$ hexo server</code><br>開啟網頁並輸入 <a href="http://localhost:4000/admin" target="_blank" rel="external">http://localhost:4000/admin</a> 進入後台，接著輸入帳密！登登！就會看到像下面這樣子的視覺化後台囉！按下 NEW POST 便可以新增文章了！<br><img src="http://i.imgur.com/7mu01nK.png" alt="Imgur"><br>如果你對 Markdown 的語法還不熟，可以一邊打一邊試試看各種標籤，這個後台的好處就是會即時顯示內容！不過切記切記，因為它不會自動儲存，打了一小段後就要記得定時存檔 (可以存成草稿就好)，等文章打完後再按下 PUBLISH 就大功告成啦！可以直接在本機端 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 看看是否成功！</p>
 <blockquote>
 <p>一開始可以先隨便打個abcd1234或是test測試就好！</p>
 </blockquote>
-<p>接著我們要把本機端有修改的內容正式發佈到網站上，再次回到你的終端機並依序使用以下指令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
+<p>接著我們要把本機端有修改的內容正式發佈到網站上，再次回到你的終端機並依序使用以下指令：<br><code>$ hexo generate
+$ hexo deploy</code></p>
 <blockquote>
-<p>沒錯，這兩個指令是每次發佈文章到網站上去都會使用到，可以使用縮寫<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure></p>
+<p>沒錯，這兩個指令是每次發佈文章到網站上去都會使用到，可以使用縮寫<br><code>$ hexo g
+$ hexo d</code></p>
 </blockquote>
-<h3 id="六、挑選主題並採用"><a href="#六、挑選主題並採用" class="headerlink" title="六、挑選主題並採用"></a>六、挑選主題並採用</h3><h3 id="七、新增分類及標籤和關於等頁面"><a href="#七、新增分類及標籤和關於等頁面" class="headerlink" title="七、新增分類及標籤和關於等頁面"></a>七、新增分類及標籤和關於等頁面</h3>
+<p>大功告成！趕快到自己的網站上 <a href="http://username.github.io" target="_blank" rel="external">http://username.github.io</a> 去看看吧！</p>
+<h1 id="挑選主題並採用"><a href="#挑選主題並採用" class="headerlink" title="挑選主題並採用"></a>挑選主題並採用</h1><p>這時你一定會跟我說怎麼部落格…看起來這麼土，那是當然的，你還沒挑選你的主題呢！這時候你可以去  <a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo 官方主題樣式</a> 挑選，或是很沒品的學我用 <a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NexT</a> 這個主題。</p>
+<p>每個主題的安裝方式或許略有不同，不過大致上都是以下步驟：</p>
+<h3 id="一、下載主題"><a href="#一、下載主題" class="headerlink" title="一、下載主題"></a>一、下載主題</h3><p>下載主題很簡單，開啟終端機，然後確立是否在 yourname 的資料夾，不然一樣使用<code>指令cd</code>移動到 <code>yourname</code><br><code>$ cd yourname</code><br>接著將你要的主題 <code>git clone</code>下來就完成下載囉！<br><code>$ git clone https://github.com/iissnan/hexo-theme-next themes/next</code></p>
+<blockquote>
+<p>什麼是 Git ? 只要記得我們有安裝這個系統就好！真的想知道請點<a href="http://iissnan.com/progit/" target="_blank" rel="external">這</a><br>至於後面那串網址就是每個 hexo主題放在 github 上給人下載用的網址囉！</p>
+</blockquote>
+<h3 id="二、開啟主題"><a href="#二、開啟主題" class="headerlink" title="二、開啟主題"></a>二、開啟主題</h3><p>所有 Hexo 主題啟用的方式都一樣。當下載完成後，用文字編輯器打開<code>_config.yml</code>，找到theme字段，並將值更改為主題名稱。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theme: next</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>next 是我使用的主題名稱，而 hexo 預設的主題名稱為 landscape</p>
+</blockquote>
+<p>然後跟po文一樣，所有的網站內容更改都得再打開終端機使用以下指令發佈到網站：<br><code>$ hexo g
+$ hexo d</code></p>
+<p>這樣就大功告成囉！</p>
+
       
     </div>
 
@@ -403,6 +434,16 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web/" rel="tag">#web</a>
+          
+            <a href="/tags/blog/" rel="tag">#blog</a>
+          
+            <a href="/tags/life/" rel="tag">#life</a>
+          
+        </div>
       
 
       
@@ -491,7 +532,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分類</span>
               </a>
             </div>
@@ -500,7 +541,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">標籤</span>
               </a>
             </div>
@@ -576,7 +617,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何使用-Hexo-Github-Pages-建立個人部落格"><span class="nav-number">1.</span> <span class="nav-text">如何使用 Hexo + Github Pages 建立個人部落格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#資料參考來源"><span class="nav-number">1.0.1.</span> <span class="nav-text">資料參考來源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一、找出你的終端機以及文字編輯器"><span class="nav-number">1.0.2.</span> <span class="nav-text">一、找出你的終端機以及文字編輯器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、先搞定-Github-Pages"><span class="nav-number">1.0.3.</span> <span class="nav-text">二、先搞定 Github Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、搞定-Hexo-所需環境"><span class="nav-number">1.0.4.</span> <span class="nav-text">三、搞定 Hexo 所需環境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、使用-Hexo-建立網站"><span class="nav-number">1.0.5.</span> <span class="nav-text">四、使用 Hexo 建立網站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、建立視覺化後台並PO文！！"><span class="nav-number">1.0.6.</span> <span class="nav-text">五、建立視覺化後台並PO文！！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、挑選主題並採用"><span class="nav-number">1.0.7.</span> <span class="nav-text">六、挑選主題並採用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、新增分類及標籤和關於等頁面"><span class="nav-number">1.0.8.</span> <span class="nav-text">七、新增分類及標籤和關於等頁面</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何使用-Hexo-Github-Pages-建立個人部落格"><span class="nav-number">1.</span> <span class="nav-text">如何使用 Hexo + Github Pages 建立個人部落格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#零、資料參考來源"><span class="nav-number">1.0.1.</span> <span class="nav-text">零、資料參考來源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一、找出你的終端機以及文字編輯器"><span class="nav-number">1.0.2.</span> <span class="nav-text">一、找出你的終端機以及文字編輯器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、先搞定-Github-Pages"><span class="nav-number">1.0.3.</span> <span class="nav-text">二、先搞定 Github Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、搞定-Hexo-所需環境"><span class="nav-number">1.0.4.</span> <span class="nav-text">三、搞定 Hexo 所需環境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、使用-Hexo-建立網站"><span class="nav-number">1.0.5.</span> <span class="nav-text">四、使用 Hexo 建立網站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、建立視覺化後台並PO文！！"><span class="nav-number">1.0.6.</span> <span class="nav-text">五、建立視覺化後台並PO文！！</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#挑選主題並採用"><span class="nav-number">2.</span> <span class="nav-text">挑選主題並採用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、下載主題"><span class="nav-number">2.0.1.</span> <span class="nav-text">一、下載主題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、開啟主題"><span class="nav-number">2.0.2.</span> <span class="nav-text">二、開啟主題</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
