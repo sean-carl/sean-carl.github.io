@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://sean.life/</loc>
+  <lastmod>2016-09-17T14:06:42+00:00</lastmod>
+</url>
+<url>
+  <loc>http://sean.life/about/</loc>
+  <lastmod>2016-09-17T14:06:42+00:00</lastmod>
+</url>
+<url>
+  <loc>http://sean.life/archives/</loc>
+  <lastmod>2016-09-17T14:06:42+00:00</lastmod>
+</url>
+<url>
+  <loc>http://sean.life/categories/</loc>
+  <lastmod>2016-09-17T14:06:42+00:00</lastmod>
+</url>
+<url>
+  <loc>http://sean.life/tags/</loc>
+  <lastmod>2016-09-17T14:06:42+00:00</lastmod>
+</url>
+<url>
+  <loc>http://sean.life/categories/Skill/</loc>
+  <lastmod>2016-09-17T14:06:42+00:00</lastmod>
+</url>
+<url>
+  <loc>http://sean.life/2016/09/15/Test/</loc>
+  <lastmod>2016-09-17T14:06:42+00:00</lastmod>
+</url>
+<url>
+  <loc>http://sean.life/2016/09/14/hello-world/</loc>
+  <lastmod>2016-09-17T14:06:42+00:00</lastmod>
+</url>
+<url>
+  <loc>http://sean.life/tags/Life/</loc>
+  <lastmod>2016-09-17T14:06:42+00:00</lastmod>
+</url>
+<url>
+  <loc>http://sean.life/tags/blog/</loc>
+  <lastmod>2016-09-17T14:06:42+00:00</lastmod>
+</url>
+<url>
+  <loc>http://sean.life/tags/web/</loc>
+  <lastmod>2016-09-17T14:06:42+00:00</lastmod>
+</url>
+</urlset>
