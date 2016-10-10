@@ -91,6 +91,9 @@
 
 
 
+  <meta property="fb:admins" content="sean0806" />
+  <meta property="fb:app_id" content="974097499383900" />
+
 
 
 <meta name="description" content="為何要建立個人網站呢？當然純粹是因為這樣比較潮，為了有個地方能夠「分享生活中的觀察」以及「記錄個人所學及經歷」。所以需要類似部落格功能的網站，且又不想要使用現有的部落格平台 (因為會和別人的都長一樣)，只好自己來建一個啦！">
@@ -143,6 +146,24 @@
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
   
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '974097499383900',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_tw/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 
 
 <script>
@@ -329,12 +350,15 @@
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2016/09/16/Create-a-personl-blog-website/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/16/Create-a-personl-blog-website/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count fb-comments-count" data-href="https://sean.life/2016/09/16/Create-a-personl-blog-website/" itemprop="commentsCount">0</span> comments
                 </a>
               </span>
             
           
 
+          
+            &nbsp; | &nbsp;
+            <div class="fb-like" data-layout="button_count" data-share="true"></div>
           
 
           
@@ -528,11 +552,11 @@
           
   <div class="comments" id="comments">
     
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
+      <div class="fb-comments"
+           data-href="https://sean.life/2016/09/16/Create-a-personl-blog-website/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
       </div>
     
   </div>
