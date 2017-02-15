@@ -305,7 +305,7 @@
               
                 
                 <a class="post-title-link" href="/2017/02/15/online-ad-serving-5-conclusion/" itemprop="url">
-                  網路廣告投放（五）實戰！如何查看成效、如何優化與 A/B Test 篇
+                  網路廣告投放（五）實戰！成效、優化與 A/B Test 篇
                 </a>
               
             
@@ -323,6 +323,25 @@
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/marketing/" itemprop="url" rel="index">
+                    <span itemprop="name">marketing</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -354,46 +373,12 @@
 
       
         
-          
-            <h1 id="網路廣告投放（五）"><a href="#網路廣告投放（五）" class="headerlink" title="網路廣告投放（五）"></a>網路廣告投放（五）</h1><h2 id="實戰！如何查看成效、如何優化與-A-B-Test"><a href="#實戰！如何查看成效、如何優化與-A-B-Test" class="headerlink" title="實戰！如何查看成效、如何優化與 A/B Test"></a>實戰！如何查看成效、如何優化與 A/B Test</h2><p>在這次的介紹之中，因為沒有完整可以公開的案例可以借我分享，因此只好用比較片段的資訊案例來分別介紹囉！</p>
-<p>我們先以查看 Facebook 廣告平台後台為例：</p>
-<ul>
-<li>這則案例是有個抽獎貼文的活動，想要藉由廣告預算來推動貼文來製造更多互動，在貼文（廣告素材）一模一樣的情況下，就先以測試「受眾」跟「出價方式」來找出差別。廣告總預算只有 $30 美金，走期三天。<blockquote>
-<p>首先可以看見在 7/19 那天投放手機跟桌面的差別，在手機效率不彰（單位成本太高）的情況下就可以直接把手機的投放關掉了，先斷定只要用「桌面」。<br><img src="https://sean.life/images/1486375453599.png" alt="image"><br>隔天 7/20 ，因為「不重複觸及」的出價方式流量一直出不來，所以直接果斷再打開另一個「追求互動 CPM收費」的出價方式。 在這個情況下我們試了把興趣為「行銷」之外，多一個「旅遊」興趣的受眾，將兩種興趣同時以「追求互動 CPM收費」還有「不重複觸及」的出價方式加以投放。<br><img src="https://sean.life/images/1486375138754.png" alt="image"><br>隔天 7/21 早上時我們可以從上圖發現，「桌面」+「追求互動 CPM 」的單位成本最低且流量也足夠，而興趣兩者皆可，因此我們便將其餘的廣告組合關掉，保留最佳兩個的組合。<br><img src="https://sean.life/images/1486376211064.png" alt="image"><br>7/21 傍晚時我們又可以從上圖發現，「旅遊」興趣的力道開始減弱，單位成本提高，但「行銷」興趣持續穩定，於是便果斷將「旅遊」的組合關掉，留下「行銷」，並把預算都投入到這個組合之中。<br><img src="https://sean.life/images/1486376530937.png" alt="image"><br>最後我們可以審視，經過優化後雖然不能達到我們找出的最佳最佳成本（ $0.04/每次互動成本），但也將總成本壓低在 $0.07/每次互動成本，而沒有冤望地將預算投到不該投入的組合之中（此圖之中最高的組合平均是 $0.28/每次互動成本）。</p>
-</blockquote>
-</li>
-</ul>
-<p>再以其他的案例圖片來解釋 Google Analytics（簡稱 GA ）如何查看成效：</p>
-<ul>
-<li><p>第三方的 GA 也是我們查看成效中的好工具，而從 GA 查看成效報表的話，其實邏輯就和管理整個網站的流量來源是一樣的！最有用的資料就是去瞧瞧我們藉由埋放 UTM 規則的追蹤參數得到的「來源/媒介」結果！步驟為「報表」-&gt;「客戶開發」-&gt;「所有流量」-&gt;「來源/媒介」。這裡指的「來源/媒介」其實就我們在使用 URL Builder 建立追蹤參數時 UTM 規則中的 utm_source 以及 utm_medium，因此當初投放廣告前的，有無好好建立 UTM 的規則就顯得相當重要。</p>
-<blockquote>
-<p>這個例子由於沒有設定 Google Analytics 的目標轉換，所以也沒有轉換率<br><img src="https://sean.life/images/1486369991639.png" alt="image"><br>設定 GA 目標轉換的教學可以參考這篇官方教學《<a href="https://support.google.com/analytics/answer/1032415" target="_blank" rel="external">建立、修改和共用目標</a>》</p>
-</blockquote>
-<p>也可以直接再進一步查看哪種廣告的到達網頁成效最好，在「次要維度」的欄位直接搜尋「到達網頁」-&gt;點選「到達網頁」觀看：</p>
-<blockquote>
-<p>到達網頁也是不錯的衡量指標，可以看見哪一個網頁是明顯最受歡迎的<br><img src="https://sean.life/images/1486372743516.png" alt="image"></p>
-</blockquote>
-</li>
-</ul>
-<p>其實最好的情況下，是將 Facebook 與 GA 抓到的成效做交叉比對，可惜手邊能用的範例不足，無法多做解釋。例如 Facebook 廣告的轉換數可能比 GA 查看到的高上許多，原因是 Facebook 可能將「註冊」、「購物」等行為都算進轉換，但我們在 GA 之中只有設 「購物」為轉換目標，那兩者得到的數字就會有所差距。所以在進行廣告優化時我們得透過交叉比對才能更清楚廣告有沒有達到我要的成效。</p>
-<p><strong>P.S 在網路上我也找不到太多實際的案例圖片可以提供給大家lol 也歡迎網友借我案例補充XDD</strong></p>
-<p>另外關於優化的部分，也可以遵循 Facebook 官方的準則來達到一定效果！<br>Facebook 官方指南：《 <a href="https://www.facebook.com/business/help/1082085278508457?helpref=faq_content" target="_blank" rel="external">有關取得轉換的完整指南</a>》《<a href="https://www.facebook.com/business/help/945693298836131?helpref=faq_content" target="_blank" rel="external">如何避免廣告投放效果不佳</a>》</p>
-<p>最後幫大家複習一下前面的所學，並統整出簡易版的 A/B Test 架構：</p>
-<blockquote>
-<p><img src="https://sean.life/images/1487150361449.png" alt="image"></p>
-</blockquote>
-<p>我們心裏要記得自己的 KPI ，然後架設出類似下面這樣的架構，每一層測試的便因都是不一樣的！而優化可以從最底層的廣告開始，以 CTR 較高、廣告品質分數較高、或甚至是轉換率較高的廣告為首，其餘不佳的廣告就關掉；再來是第二層的廣告組合，找出較佳的投放成本和流量，將不適當的廣告組合關掉，把預算都投入在好的組合上；最後，最上層的行銷活動也是和廣告組合差不多的原理！原則上只要能遵循這個簡單的 A/B Test 架構，再慢慢把架構複雜化，應該就可以順利找到適合的每個人的廣告投放策略囉！</p>
-<p>這個章節就這樣告一段落啦！最後下面是我給關於《網路廣告投放》這系列文的結語，對我的文章有更多疑問或不滿的話一定要往下看！</p>
-<h2 id="結語-："><a href="#結語-：" class="headerlink" title="結語 ："></a>結語 ：</h2><p>實在抱歉，在寫這篇文章時沒有想到手邊的案例圖片這麼少，其中還有許多沒能細講部分實在是一點遺憾啊！然後隨著我們越深入廣告投放，使用到的追蹤程式碼、標籤、分析軟體也提到越來越多，但又沒辦法在文章一開頭就從埋放開始教學（到這了才開始講大家才會比較明白為什麼吧？），所以就在結語一起提囉！一般我們常直接使用 <a href="https://www.google.com/analytics/tag-manager/" target="_blank" rel="external">Google Tag Manager</a>（ GTM 標籤管理員）來統一管理埋放的追蹤碼（不管是 Google Analytics、Facebook Pixel 還是其他更多第三方的追蹤碼 ）。在這邊附上幾篇不錯的相關文章：</p>
-<ul>
-<li>解析正確的 Tracking Code 觀念：<a href="https://blog.alphacamp.co/2017/02/07/coding-basics-for-marketers-3/" target="_blank" rel="external">行銷人員不可不知的程式知識（三）— 全面解析追蹤代碼（Tracking Code）</a></li>
-<li>有關 GTM 的介紹跟好處：《<a href="https://blog.welldevelop.com/google-tag-manager-%E7%B2%BE%E6%BA%96%E8%A1%8C%E9%8A%B7%E5%BF%85%E5%82%99%E5%B7%A5%E5%85%B7/" target="_blank" rel="external">GTM 精準行銷必備工具，簡化追踪編碼流程</a>》</li>
-<li>如何使用 GTM 安裝 GA 的文章：《<a href="http://web.analytics101.org/analytics/google-tag-manager/160/ga-migrate-to-gtm/" target="_blank" rel="external">第一次使用 GTM 就上手</a>》、《<a href="https://www.williamformosa.com/google-analytics-event/" target="_blank" rel="external">[Google Tag Manager教學]Event事件追蹤</a>》</li>
-<li>如何使用 GTM 安裝 Facebook Pixel：《<a href="https://blog.alphacamp.co/2016/12/14/how-to-add-a-facebook-pixel-through-google-tag-manager/" target="_blank" rel="external">如何使用 Google Tag Manager 安裝 Facebook 像素與事件代碼？</a>》</li>
-</ul>
-<p>上面講了許多廣告投放的原理及邏輯，雖然並不能幫助你一夕成為廣告投放大師，但希望也算是個教導手冊或 SOP ，讓大家有邏輯可循。除此之外，其實也提到許多流量分析跟數據追蹤的方法跟原理，在經營網路媒體、電商網站或甚至是 APP 應用的行銷及媒體規劃時，其實用到的邏輯都是類似的，唯一的問題就是每個產業的性質絕對大大不相同，所以剩下的大概就真的是經驗的自然累積了吧！那麼有關網路廣告投放的文章就先到此結束囉！ 感謝收看！</p>
-
-          
+          <h2 id="實戰！如何查看成效、如何優化與-A-B-Test"><a href="#實戰！如何查看成效、如何優化與-A-B-Test" class="headerlink" title="實戰！如何查看成效、如何優化與 A/B Test"></a>實戰！如何查看成效、如何優化與 A/B Test</h2><p>在這次的介紹之中，因為沒有完整可以公開的案例可以借我分享，因此只好用比較片段的資訊案例來分別介紹囉！<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/02/15/online-ad-serving-5-conclusion/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -461,6 +446,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/marketing/" itemprop="url" rel="index">
+                    <span itemprop="name">marketing</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -491,86 +495,13 @@
 
       
         
-          
-            <h1 id="網路廣告投放（一）"><a href="#網路廣告投放（一）" class="headerlink" title="網路廣告投放（一）"></a>網路廣告投放（一）</h1><h2 id="概論篇："><a href="#概論篇：" class="headerlink" title="概論篇："></a>概論篇：</h2><p>這裡僅是網路廣告投放的概論篇，之後也會再提到網路廣告投放的實戰篇。</p>
-<p>聲明：本人不是廣告系也沒念過廣告學，以下都只是自己的所見所聞跟想像，所以此堂課的觀念或許會有偏差，請多包容，而且這裡只講網路廣告的投放哦～XD</p>
-<h3 id="1-先來講講廣告本身："><a href="#1-先來講講廣告本身：" class="headerlink" title="1. 先來講講廣告本身："></a>1. 先來講講廣告本身：</h3><p>先來講講過去的廣告是怎麼運作的好了！<br>「廣告」顧名思義其實就是「廣而告知」的意思，最早的廣告其實是只有聲音的，又稱叫賣廣告，到後來才衍生成了有點創意或是藝術設計的各種靜態跟動態的視覺廣告。</p>
-<p>「廣告投放」其實就是將這些廣告置放在各種媒介來傳播給大眾。 而過往年代中，廣告主想要投放廣告最常見的方式就是委託「代理商」或是自行進行「媒體採購」後，就能將「廣告投放」出去，於似乎代理商那邊就會有一張 CUE 表來查看各媒體或廣告的表現跟花費。而傳統的媒體可能就是幾個重要的電視台或報章雜誌，掌握這些媒體幾乎就可以掌握大部分的群眾。</p>
-<p>在網路剛興起之時，這些大型網站跟電視台基本上也沒有兩樣，因此若是想要購買網站上的某個頭版版位，廣告主也僅須委託代理商或是自行進行接洽即可買下版位。這些版位因為閱讀受眾多，所以往往價格昂貴。</p>
-<p>而在技術日益演進之下，網路廣告進展到了新的世代 - RTB 世代（Real Time Bidding 即時競價技術），擁有 RTB 技術的平台將所有的廣告版位集合起來統一管理並競價，廣告主在採購媒體的時候便可以不需要再花巨額買下不知道效果到底如何的「固定版位」，取而代之的是用較有實際效益的分批買下觀看這些廣告版位的「人」，我們稱之為廣告『受眾』。 </p>
-<p>廣告也不再是以「A版位每個月多少錢」來決定售價，而是以「每次曝光成本CPM、每次點擊成本CPC、每次轉換成本CPA…等指標」來計價。</p>
-<p>雖然不是購買版位，但廣告仍然是有版位或種類之分的，以下是常見的例子：</p>
-<ul>
-<li>搜尋入口 關鍵字搜尋廣告 Search Ads<blockquote>
-<p><img src="https://sean.life/images/1486391556081.png" alt="image"></p>
-</blockquote>
-</li>
-<li>媒體網站 橫幅、蓋版廣告 Banner Ads<blockquote>
-<p><img src="https://sean.life/images/1486391561709.png" alt="image"></p>
-</blockquote>
-</li>
-<li>Facebook 側邊欄廣告、動態原生廣告<blockquote>
-<p><img src="https://sean.life/images/1486391578207.png" alt="image"><img src="https://sean.life/images/1486391589425.png" alt="image"></p>
-</blockquote>
-</li>
-<li>行動手機 APP 蓋屏廣告、橫幅廣告<blockquote>
-<p><img src="https://sean.life/images/1486383277964.png" alt="image"><img src="https://sean.life/images/1486383306216.png" alt="image"></p>
-</blockquote>
-</li>
-</ul>
-<p>既然講到計價方式，那就該來解釋解釋這些名詞背後真正的含意囉：</p>
-<h3 id="2-各種計價名詞解釋："><a href="#2-各種計價名詞解釋：" class="headerlink" title="2. 各種計價名詞解釋："></a>2. 各種計價名詞解釋：</h3><p>這邊只列出業界常用的幾種指標，我們在買廣告的時候會以這些成本去計價，這樣廣告主便可拿捏要花多少的預算來達到什麼樣的指標。</p>
-<ul>
-<li><p>CPC：Cost Per Click 每次點擊成本，也就是『受眾』看到廣告後，真正去點擊廣告的費用。</p>
-</li>
-<li><p>CPA：Cost Per Action 每次行動成本、每次轉換成本，也就是『受眾』看到廣告後，真正去點擊廣告並行動的價格。這裡的行動跟轉換很廣義，狹義的還可分為註冊、下單、下載、按讚、分享…就看各個組織的定義方式。</p>
-</li>
-<li><p>CPM：Cost Per 1000 Impressions 每千次曝光成本，也就是每一千次『受眾』看到廣告後的成本。</p>
-</li>
-</ul>
-<p>對於初學者來說，我們可以先了解這三個常用的名詞就好，了解後就可以估算一下需要花多少的預算來達到自己的初期目標！除此之外，另一個重要的點是，藉由各種不同的出價方式，來計算出對自己最有利的的廣告出價方法。 </p>
-<p>真正了解這三個指標後，我們終於可以進入廣告投放的階段了。</p>
-<blockquote>
-<p><img src="https://sean.life/images/1487153562725.png" alt="image"></p>
-</blockquote>
-<p>但是…現在好多好多平台可以用啊…又有各家自稱很厲害的業者，到底怎麼分辨呢？ 那我們就得先分清楚每家業者到底是什麼性質了：</p>
-<h3 id="3-各種好像超強平台"><a href="#3-各種好像超強平台" class="headerlink" title="3. 各種好像超強平台"></a>3. 各種好像超強平台</h3><p>在網路崛起之前，理所當然的也有許多的電視台或是報章雜誌，媒體採購這項任務的其實也相當複雜，因此「媒體代理商、廣告代理商」也顯得相當重要，因此在媒體採購或廣告投放時我們也可以直接經由代理商來處理。</p>
-<p>但是到了網路世代，事情就更複雜了，得先分別從廣告版位的供給方跟需求方來講起。首先是供給方，到了網路世代，出現了越來越多的網站跟媒體他們也想靠網路廣告置放來賺取收益，這時就開始出現了仲介角色「AD Network 廣告聯播網」來集合這些網站跟媒體的廣告版位。</p>
-<blockquote>
-<p><img src="https://sean.life/images/1486840109828.png" alt="image"></p>
-</blockquote>
-<p>隨著世代的演進，太多的新媒體或網站出現，也越來越多的仲介（就是指 Network）想搶這個生意，於是「SSP 供給方平台」就這樣出現了，SSP 統整了背後的廣告聯播網或是媒體，並主打能夠『利用技術幫助 <strong>媒體主</strong> 實現利益最大化』，利用技術來優化 SSP 內串接的所有廣告版位。</p>
-<blockquote>
-<p><img src="https://sean.life/images/1486840135926.png" alt="image"></p>
-</blockquote>
-<p>再來是需求方，進入網路世代，廣告主將過往花在電視台、報章雜誌上的資金轉移到網路上，但網路上這麼多的媒體，怎麼知道好不好呢？網路世界變化得太快，就連代理商自己也都不知道！這時候就出現了 「DSP 需求方平台」來做這筆生意啦～ DSP 將所有廣告主或代理商的需求整合在一起，並主打『利用技術幫助 <strong>廣告主</strong> 實現利益最大化』。</p>
-<blockquote>
-<p><img src="https://sean.life/images/1486840157554.png" alt="image"></p>
-</blockquote>
-<p>但是我們知道供給和需求並需要有一個平衡，買賣才會發生！那誰要來當 DSP 和 SSP 的撮合角色呢？那就是「AD Exchange 廣告交易平台」了！<del>至於你問我是雞生蛋還是蛋生雞這種誰先誰後的供需誰先出現的問題我就不知道了….</del></p>
-<blockquote>
-<p><img src="https://sean.life/images/1486840194435.png" alt="image"></p>
-</blockquote>
-<p>那 Google 大神是什麼角色呢？我認為他就是幾乎通包了！在供給方 Google Adsense 可能是過往統一媒體的一個方式，但需求方又可以透過 Google Adwords 去直接投放廣告。或是供需雙方都可直接經由 Google 收購的 DoubleClick 來做交易，Google 大神真的是萬能啊～ 旗下還有 Youtube 這個近乎可稱為另一個獨立媒體，廣告主也可直接經由 Adwords 來投放 Youtube 廣告。</p>
-<p>但是我們最愛用的 Facebook 更是萬惡之神，他不統一這些媒體，反而自己創造了媒體，有了全世界最多的受眾之後，在自己建立自己的廣告系統、廣告版位，自己就是最可怕的大平台，對岸的 WeChat 我想也不遑多讓。</p>
-<p>所以大概可以畫成這個圖：</p>
-<blockquote>
-<p><img src="https://sean.life/images/1486840217408.png" alt="image"></p>
-</blockquote>
-<p>請注意，左邊到右邊絕對都有層層的仲介，每一層與層之前都可以有互相的合作關係、分潤關係、或是買賣關係。</p>
-<p>所以廣告主應該端看自己的需求，決定要接洽中間哪一層的仲介。<br>而絕大多數的廣告主，其實都只會碰到全球知名的廣告代理商、代理 XXXXX 平台的代理商、或 DSP 及 ADexchange！那在接觸這些業者之前，我們究竟要委外還是自操就好呢？</p>
-<h3 id="4-究竟要委外還是自操就好呢？"><a href="#4-究竟要委外還是自操就好呢？" class="headerlink" title="4. 究竟要委外還是自操就好呢？"></a>4. 究竟要委外還是自操就好呢？</h3><p>做行銷時我們得依照目標，來設定我們想將廣告放到哪些相對應的媒體上，我們可以直接找中間的這些代理商或是直接使用像是 Facebook、Google 或 Yahoo 等大平台工具來幫我們推動行銷方案。而代理商有的是代理國外知名的 DSP、ADexchange 或是大平台系統、又或是再直接委託國內外的 DSP 或更上游的代理商操刀。究竟自己來（In-House）跟委外（Outsourcing）哪個好呢？這當沒有完美的答案，不過可以稍微簡列一下委外的優缺點</p>
-<ul>
-<li><p>委外的優點<br>1.專門做廣告代理的業者肯定能提供給內部團隊創意上的廣度<br>2.外部業者廣告投放的的經驗值多，可能不需要試錯即可找到很棒的投放成本<br>3.技術深厚的外部團隊可能還擁有大量的數據資料，所以能更幫助廣告投放</p>
-</li>
-<li><p>委外的缺點<br>1.委外的話溝通成本絕對是大大增加，不管是開會還是即時通訊都麻煩<br>2.長期委外可能導致團隊內部本身在這一塊完全沒有心得增長<br>3.許多產業 know-how 是外部公司不知道，或是內部不想分享給外部公司的</p>
-</li>
-</ul>
-<p>綜觀以上，或許在廣告投放這一塊最好的解決辦法或許是聘請有經驗的「顧問」訓練 In-Hosue 的團隊，或是使用 In-House + Outsourcing 來提高溝通效率以及彼此分享 know-how 並互相學習，這樣也可解決以上的缺點！</p>
-<p>了解完概論，如果你考慮自操看看，那你可以繼續把這系列都看完，這個系列的實戰我們會以 Facebook 為例，因此下一篇就是先來介紹一下 Facebook 平台的簡介囉：《<a href="">Facebook 廣告平台 - 介面及功能簡介篇</a>》</p>
-<h2 id="資料參考來源："><a href="#資料參考來源：" class="headerlink" title="資料參考來源："></a>資料參考來源：</h2><p>《<a href="https://www.zhihu.com/question/23458646" target="_blank" rel="external">DSP、SSP、RTB 是怎样的一个过程？</a>》<br>《<a href="https://www.zhihu.com/question/20320181" target="_blank" rel="external">为什么会出现 Ad exchange？</a>》<br>《<a href="https://blog.dcplus.com.tw/marketing-knowledge/growther/12911" target="_blank" rel="external">四大網路廣告聯播網比一比</a>》<br>《<a href="http://www.techxue.com/techxue-5069-1.html" target="_blank" rel="external">解读 Ad Network、Ad Exchange、DSP、SSP、RTB 和DMP 是什么？</a>》<br>《<a href="http://wiki.mbalib.com/zh-tw/%E5%B9%BF%E5%91%8A" target="_blank" rel="external">何謂廣告</a>》<br>《<a href="http://wiki.mbalib.com/zh-tw/%E5%AA%92%E4%BD%93%E8%B4%AD%E4%B9%B0" target="_blank" rel="external">媒體購買</a>》</p>
-
-          
+          <h2 id="概論篇："><a href="#概論篇：" class="headerlink" title="概論篇："></a>概論篇：</h2><p>這裡僅是網路廣告投放的概論篇，之後也會再提到網路廣告投放的實戰篇。</p>
+<p>聲明：本人不是廣告系也沒念過廣告學，以下都只是自己的所見所聞跟想像，所以此堂課的觀念或許會有偏差，請多包容，而且這裡只講網路廣告的投放哦～XD<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/02/14/online-ad-serving-1-introduction/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -638,6 +569,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/marketing/" itemprop="url" rel="index">
+                    <span itemprop="name">marketing</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -668,37 +618,12 @@
 
       
         
-          
-            <h1 id="網路廣告投放（三）"><a href="#網路廣告投放（三）" class="headerlink" title="網路廣告投放（三）"></a>網路廣告投放（三）</h1><h2 id="Facebook-Bid-廣告競價機制篇："><a href="#Facebook-Bid-廣告競價機制篇：" class="headerlink" title="Facebook Bid 廣告競價機制篇："></a>Facebook Bid 廣告競價機制篇：</h2><p>關於 Bid 的機制，網路上有幾篇解釋得不錯的文章，再加上一些 Facebook 官方文件，最後濃縮出以下內容！既然是簡化後，所以也只會大概列出投放會影響到的因素而已，想了解更詳細的都可以直接滑到最下面看看資料參考來源！</p>
-<p>在之前的概論篇我們有提到，網路廣告是即時競價制的，透過競價才能選出最重要、最適合的廣告推給最符合的使用者。而這個競價機制採用的值是怎麼算出來的呢？我整理之後發現公式如下：</p>
-<blockquote>
-<p>總競標價格 = 最終出價 ( 廣告主投標價*函數(Pacing) ) + 廣告質量分數</p>
-</blockquote>
-<p>『總競標價格』就是最後拿到平台上競價的一個值，這個值是由『最終出價』和『廣告質量分數』所加總得出。而再把他們拆解開來的話，其實主要就是受到三個因素影響：「廣告主投標價」、「廣告相關度」、「廣告本身質量」。</p>
-<blockquote>
-<p><img src="https://sean.life/images/1487007756184.png" alt="image"></p>
-</blockquote>
-<ul>
-<li><p>廣告主投標價：<br>這個金額就是我們廣告主所能投遞的最大單價，單位可以是 CPC、CPA、CPM、oCPM，出價金額的高低和出價的方法會影響到最後運算公式時的值。而這些金額會通通通過函數 (<a href="https://developers.facebook.com/docs/marketing-api/pacing?locale=zh_TW" target="_blank" rel="external">Pacing Algorithms</a>) ，轉化為單位同為 per Impression 的『最終出價』。那我們除了更改廣告主投標價之外，還要注意什麼呢？<br>這時候就要注意其實我們可以再把最終出價拆解出簡單的公式：</p>
-<blockquote>
-<p>最終出價 ( per Impression ) = Optimal Bid per Impression＊相關率</p>
-</blockquote>
-<p>相關率就會和我們的廣告相關度非常有關！</p>
-</li>
-<li><p>廣告相關度：<br>指的當然就是由 Facebook 預測廣告跟受眾的相關程度，像是 預測受眾採取動作的機率（ CTR、CVR、VTR 等等），以及預測受眾與廣告的相關度。所以簡單來說我們可以簡略推測出下列三個公式：</p>
-<blockquote>
-<p>For CPC,    最終出價 = Optimal Bid＊CTR<br>For CPA,     最終出價 = Optimal Bid＊CVR＊CTR<br>For CPM,    最終出價 = Optimal Bid＊VTR</p>
-</blockquote>
-<p>也就是說我們可以透過提高廣告對受眾的相關度，進而提高『最終出價』，最後提高我們的總競價的值！</p>
-</li>
-<li>廣告本身質量：<br>廣告質量分數受到最大的影響就是「廣告的本身質量」了，這個質量是 Facebook 會去計算像是預期的正面回饋、預期的負面回饋、動態演算法中的比重、廣告連結的好壞，最後去評價一個廣告本身的分數。而 Facebook 官方沒說出的潛規則是這些廣告本身的分數也會進而影響「廣告組合的質量」，更甚至是影響到「帳號品質」，而這最終都會影響到『廣告質量分數』。p.s 這也是自操的表現很難追上某些優秀代理商或技術廠商的原因，因為他們的帳號品質已經領先我們太多了！</li>
-</ul>
-<p>如果你有去看 Pacing 演算法的官方解說、或是有興趣看下方的資料參考來源的話，或許會看到我沒在這篇文提及的關鍵字眼「VCG競價機制」及「GSP競價機制」。簡單來說，Facebook 採用的是 VCG 競價機制，這種機制可以達到整體社會效益的最大化（全體使用者、及廣告主+廣告平台本身）。而 Google、百度是採用 GSP 競價機制，這種機制就是單純讓廣告主及平台受惠，但規則簡單易懂。 </p>
-<p>其實讀了這麼多資料，大家雖然寫得很詳細，但太多的名詞中可能又因為沒有使用一模一眼的字眼，導致公式與公式間對不太起來。上述是我將內容內化後，用自己的文字簡化出的公式（希望我沒有搞錯），希望把複雜的 Bid 廣告競價機制這樣簡單化後，能讓更多人都能看懂影響最終的因素為何，以及為什麼是這樣～ 這篇就到此結束囉，感謝收看！了解理論上廣告機制背後牽涉的因素後，那實作上我們要去控制哪些變因來讓廣告表現更好呢？那就得看下一篇《 <a href="">實戰！自行操作投放影響因素篇</a> 》囉</p>
-<h2 id="資料參考來源："><a href="#資料參考來源：" class="headerlink" title="資料參考來源："></a>資料參考來源：</h2><p>Facebook 官方手冊：《<a href="https://www.facebook.com/business/help/430291176997542" target="_blank" rel="external">瞭解投標及廣告競價的運作方式</a>》《<a href="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xfa1/t39.2365-6/12057037_411927955684886_99621256_n.pdf" target="_blank" rel="external">Facebook Auction 101</a>》《<a href="https://developers.facebook.com/docs/marketing-api/pacing?locale=zh_TW" target="_blank" rel="external">Pacing Algorithms</a>》</p>
-<p>其餘網路大大們：《<a href="http://www.akichy.com/archives/618#comment-84" target="_blank" rel="external">淺談 Facebook 廣告競價機制</a>》《<a href="https://zhuanlan.zhihu.com/p/23698265?refer=yangjuan" target="_blank" rel="external">FACEBOOK广告投放教程 竞价篇（一）</a>》《<a href="http://www.smartly.io/blog/bid-optimization-pacing-on-facebook-explained" target="_blank" rel="external">Bid Optimization: Pacing on Facebook Explained</a>》</p>
-
-          
+          <h2 id="Facebook-Bid-廣告競價機制篇："><a href="#Facebook-Bid-廣告競價機制篇：" class="headerlink" title="Facebook Bid 廣告競價機制篇："></a>Facebook Bid 廣告競價機制篇：</h2><p>關於 Bid 的機制，網路上有幾篇解釋得不錯的文章，再加上一些 Facebook 官方文件，最後濃縮出以下內容！<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/02/14/online-ad-serving-3-facebook-bid/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -766,6 +691,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/marketing/" itemprop="url" rel="index">
+                    <span itemprop="name">marketing</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -796,75 +740,12 @@
 
       
         
-          
-            <h1 id="網路廣告投放（二）"><a href="#網路廣告投放（二）" class="headerlink" title="網路廣告投放（二）"></a>網路廣告投放（二）</h1><h2 id="Facebook-廣告平台-介面及功能簡介篇："><a href="#Facebook-廣告平台-介面及功能簡介篇：" class="headerlink" title="Facebook 廣告平台 - 介面及功能簡介篇："></a>Facebook 廣告平台 - 介面及功能簡介篇：</h2><p>這篇要跟大家介紹的是 Facebook 廣告平台的介面及功能簡介，了解了這些功能之後我們才能慢慢解釋廣告投放的影響因素是什麼。</p>
-<p>首先我們先進入 <a href="https://business.facebook.com/ads/manager" target="_blank" rel="external">Facebook 的商業後台及廣告管理員</a>，粉專跟企業平台的綁定這邊就不多贅述了。我們直接進到建立廣告的頁面來解釋 Facebook 後台。</p>
-<blockquote>
-<p>Facebook 目前建立廣告的第一個頁面大致上會長這樣：<br><img src="https://sean.life/images/1486020026741.png" alt="image"></p>
-</blockquote>
-<p>左側邊這直排我們可以看到 Facebook 將網路廣告分為三個層次（幾乎每家系統都長這樣啦），依序為 Campaign（行銷活動）、Ad Set（廣告組合）、Ads（廣告）。那先稍微解釋一下每個層次能更改的條件式有哪些好了。</p>
-<ul>
-<li><p>Campaign（行銷活動）：</p>
-<blockquote>
-<p><img src="https://sean.life/images/1486980884679.png" alt="image"></p>
-</blockquote>
-<p>這個層次稱為行銷活動，其實就是選訂你要的目標（其實是廣告收費方式）啦！在投放任何廣告之前，我都會先問問自己，我這次要追求什麼樣的目標？但這是自己知道就好，因為你選的任何一個 Facebook 上的目標都只是一個「<strong>參考</strong>」，這個選定的目標會依照 Facebook 的演算法邏輯去投放我們的廣告，但實際上對我們而言，最後攸關到的其實是「<strong>廣告的功能、樣式、及位置</strong>」以及「<strong>廣告的計價方式</strong>」，嚴格來說最後的目標成效其實得靠自己去比對的。如果要完整查看每個行銷活動影響到的計價方式的話，我推薦這篇《<a href="https://goo.gl/lUajaC" target="_blank" rel="external">Facebook行銷活動與競價對應表</a>》，用表格的方式寫得十分詳細！</p>
-<p>B.T.W 行銷活動中其中有幾個目標是需要埋放 Facebook Pixel（ FB 像素）程式碼，才能達到優化效果的，所以在沒有程式碼協助的情況下，基本上是激發不出效果的。</p>
-</li>
-<li><p>Ad Set（廣告組合）</p>
-<blockquote>
-<p><img src="https://sean.life/images/1487007855437.png" alt="image"></p>
-</blockquote>
-<p>在一個行銷活動之中，可以放置數個廣告組合，而在廣告組合這一層呢，基本上我們能去調整的東西叫做「<strong>受眾</strong>」、「<strong>版位</strong>」、「<strong>預算</strong>」。有關「受眾」的設定其實就是 Facebook 廣告平台最強大的元素之一，因為 Facebook 可以輕易蒐集到每位使用者的基本資訊跟使用行為並將其分類，所以也讓我們在投放廣告時可以輕易投放到我們設想的目標受眾之中；而「版位」就可以去設定像是裝置類型（一般桌面網頁、IOS、Android ）、或是 Facebook 旗下的哪些平台（ Facebook、Instagram、Messenger 或是旗下的 App 聯播網），而能投放的版位也會因為隨著上一層選的廣告目標類型不同，而有所限制；最後「預算」則是控制著這個單一的廣告組合，每天或每組將花費多少的預算上限，根據投放的額度也會決定廣告的短期流量，除此之外也可以設置廣告的時間排程，而預算中最重要的是，也可以提出預計所花費的 <strong>Bid 廣告競價金額</strong>，可以選擇的收費方式會依照上一層所設置的目標類型不同，而有算變化。<br>整體來說，廣告組合會大大地影響我們廣告最後的表現。</p>
-</li>
-<li><p>Ad（廣告）</p>
-<blockquote>
-<p><img src="https://sean.life/images/1487007991194.png" alt="image"></p>
-</blockquote>
-<p>廣告這一層，顧名思義就是在真正將我們設計好的廣告放上去的地方囉！一個廣告組合之中能放置數個廣告，每個廣告都可以設計不同的文案、格式（單一圖片、輪播圖片、影片、全螢幕互動）、廣告點擊連結、以及不同的點擊按鈕。這裡我們除了可以設置各種不同的廣告文案及外觀之外，最重要的是我們可以在廣告點擊連結之中加入追蹤參數，藉此辨別各個廣告的最終成效，除了使用 <a href="https://business.facebook.com/business/help/1016122818401732" target="_blank" rel="external">Facebook 的參數設定</a>之外，或是我們可以直接使用 <a href="https://ga-dev-tools.appspot.com/campaign-url-builder/" target="_blank" rel="external">Google URL Builder</a> 把網址加上 UTM 規則（<a href="https://shopline.tw/blog/utm-ultimate-guide/" target="_blank" rel="external">這篇文章講得蠻細的可以直接參考</a>）的追蹤參數，方便直接從第三方的 Google Analytics 追蹤成效。</p>
-</li>
-</ul>
-<p>前面雖然講完了大致上 Facebook 提供給我們的介面功能，但我還是得稍微詳細講一下「Audience（廣告受眾）」及「 Facebook Pixel」的功能：</p>
-<ul>
-<li><p>Audience（廣告受眾）：<br>除了設定「年齡」、「地點」、「性別」、「興趣」、「關係鏈」等預先選項之外，我們還可以直接利用「使用者行為」建置更符合明確受眾。</p>
-<p>Facebook 強大的受眾資料庫裡面有超級多的選項可以提供給我們發揮，而「 使用者行為」一開始可以選擇的包括「顧客檔案」、「網站流量」、「應用程式動態」、「在 Facebook 上的互動」。</p>
-<blockquote>
-<p><img src="https://sean.life/images/1486981044906.png" alt="image"></p>
-</blockquote>
-<p>「顧客檔案」其實就是可以將你已經有的會員資料像是 Email、Facebook 用戶編號、年齡、性別等資料直接輸入 Facebook 整合。而「網站流量」、「應用程式動態」就是可以根據 Facebook Pixel 或 Facebook Plugin 去追蹤使用者在你的網站或應用程式上的行為，像是「有留言過某篇文章的人」、「有將商品加進購物車行為的人」、「有瀏覽某些商品種類的人」，條件式會根據我們埋放不同的 Pixel 或 Plugin 有所不同。</p>
-<p>而「廣告受眾」其實才是自操還有委託技術廠商的最大差別，技術廠商可以寫出更細緻的特定行為， 且其擁有的使用者資料來源，是我們自操所無法比擬的（例如我們的競爭對手也是他的客戶，那搞不好可以直接使用競爭對手的訪客來源）。</p>
-</li>
-<li><p><a href="https://www.facebook.com/business/help/www/742478679120153" target="_blank" rel="external">Facebook Pixel （FB 像素）</a>：</p>
-<blockquote>
-<p><img src="https://sean.life/images/1486981988320.png" alt="image"></p>
-</blockquote>
-<p>Facebook Pixel 其實是 Facebook 在網路界制霸天下最可怕的武器之一。Facebook 除了我們一般人知道的，會搜集我們在動態上的各使用者行為之外，也藉由「有埋入 Pixel 的全球網站之中」，默默地在該網站對追蹤瀏覽者的行為，並給予瀏覽者相對應的編號，然後再將其編號和有登入 Facebook 用戶留下的 cookies 做比對，這就是 Facebook 得以搜刮全世界的使用者行為資料並存在資料庫中加以分析的秘密！（ 而 Google 也是大同小異啦 ）</p>
-<blockquote>
-<p>直接擷取臉書的官方畫面潮一下：<br><img src="https://sean.life/images/1486981929507.png" alt="image"></p>
-</blockquote>
-<p>那對於我們投放廣告的人而言，我們其實只需知道，基本上 Facebook Pixel 就是一段制定好的 JavaScript 程式碼，將這 Pixel 程式碼放入我們網站相對應的位置之中，它就可以協助我們三件事情：「建立受眾」、「追蹤成效」及「優化成效」。</p>
-<ol>
-<li><p>建立受眾：</p>
-<blockquote>
-<p><img src="https://sean.life/images/1486315125197.png" alt="image"></p>
-</blockquote>
-<p>簡單來說，上一點我們提到的 Audience（廣告受眾）就是建立在 Pixel 的基礎下，所以我們才能輕易地使用像是依據「使用者行為」及甚至是依據「興趣」所區別的廣告受眾。</p>
-</li>
-<li><p>追蹤成效：</p>
-<blockquote>
-<p><img src="https://sean.life/images/1486314766439.png" alt="image"></p>
-</blockquote>
-<p>在 Facebook 的廣告報表後台上，我們可以在自訂欄位之中看見『轉換次數』這個大項目，其中所有的小項目都是得安裝 Pixel 才能確實追蹤的數據，像是「購買」、「註冊」..等等。也就是說如果沒有安裝 Pixel ，其實我們就無法直接從後台看出廣告實際帶來的轉換效益為何，除非我們用其他第三方工具配合，像是前面有提到的 GA + URL Builder。而實際的做法我們會在後面的章節提到。</p>
-</li>
-<li>優化成效：<br>記得我們前面曾經提到，有些行銷活動的目標必須要有 Pixel 才可以激發出效果嗎？那就是因為 Pixel 達到追蹤成效之後，我們才可以根據實際成效去優化我們的廣告效果以及將投放成本壓低。而實際的做法我們也會在更後面的章節提到。</li>
-</ol>
-<p>至於 Pixel 的埋放安裝流程可以直接參考《 <a href="https://www.facebook.com/business/help/952192354843755?helpref=faq_content#addeventcode" target="_blank" rel="external">Facebook 的官方教學 </a>》。另外，我們也可以使用 <a href="https://chrome.google.com/webstore/detail/facebook-pixel-helper/fdgfkebogiimcoedlicjlajpkdmockpc?hl=zh-TW" target="_blank" rel="external">Facebook Pixel Helper</a> 這個 Chrome 插件來幫我們檢查網站上的每頁 Pixel 是否有安裝正確！</p>
-</li>
-</ul>
-<p>我們終於大致將 Facebook 的平台簡介完囉<del>（比我想像中還多許多囧）</del>！接下來，再開始實戰前，我們還得先瞭解一下實際在 Facebook 上的競價機制為何（實際上瞭解一套平台的競價機制後，基本上可以適用大部分的平台），在還沒瞭解 Bid 廣告競價機制之前，我們也沒辦法開始解釋優化的邏輯是基於什麼理由，所以就讓我們來一探這個較少行銷人有研究的地方吧！</p>
-<p>看下一篇：《<a href=""> Facebook Bid 廣告競價機制 </a>》</p>
-
-          
+          <h2 id="Facebook-廣告平台-介面及功能簡介篇："><a href="#Facebook-廣告平台-介面及功能簡介篇：" class="headerlink" title="Facebook 廣告平台 - 介面及功能簡介篇："></a>Facebook 廣告平台 - 介面及功能簡介篇：</h2><p>這篇要跟大家介紹的是 Facebook 廣告平台的介面及功能簡介，了解了這些功能之後我們才能慢慢解釋廣告投放的影響因素是什麼。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/02/14/online-ad-serving-2-facebook-introdcution/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -932,6 +813,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/marketing/" itemprop="url" rel="index">
+                    <span itemprop="name">marketing</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -962,58 +862,12 @@
 
       
         
-          
-            <h1 id="網路廣告投放（四）"><a href="#網路廣告投放（四）" class="headerlink" title="網路廣告投放（四）"></a>網路廣告投放（四）</h1><h2 id="實戰！Facebook-自行操作投放影響因素篇"><a href="#實戰！Facebook-自行操作投放影響因素篇" class="headerlink" title="實戰！Facebook 自行操作投放影響因素篇"></a>實戰！Facebook 自行操作投放影響因素篇</h2><p>從理論上了解完整個數據追蹤的原理跟 Bid 廣告競價機制後，那我們可以終於開始來實戰了！ 既然是自操，我們大概能控制的變因其實主要來講就是三種：『廣告素材』、『廣告受眾』及『出價方式』：</p>
-<blockquote>
-<p><img src="https://sean.life/images/1487060798370.png" alt="image"></p>
-</blockquote>
-<ul>
-<li><p>廣告素材：<br>廣告的文案、圖片等素材在這兩年變成顯學，也顯得越來越重要！但老實說這也是我最不拿手的地方，沒什麼可以分享給各位的，只好直接轉貼一下其他大大們的懶人包了：像是 Ryan 大的《<a href="https://goo.gl/LFm6uB" target="_blank" rel="external">廣告素材實戰攻略_Facebook 篇</a>》。值得一提的是，不管我們設計出多麽有效的「廣告組合」，裡面的廣告勢必會因為時間性而變得乏味（誰會一直點已經看過的廣告素材呢？）所以廣告素材無論再怎麼有創意，也應該要定期更換！</p>
-</li>
-<li><p>廣告受眾：<br>受眾是最需要用邏輯去構思的地方，究竟要怎麼找到所謂的目標客群呢？<br>我們可以以傳統的行銷學來思考，大概可用『開發新客』以及『維持舊客戶』的觀念來思考！</p>
-<blockquote>
-<p><img src="https://sean.life/images/1487060542301.png" alt="image"></p>
-</blockquote>
-<p>假設我們現在是剛起步的新電商（已埋放好 Facebook Pixel），在完全沒有舊客或是客源不足的情況下，我們可以就可以先從「<strong>Interests</strong>」開始著手（開發新客），接著有穩定觀站流量後進行「<strong>Remarketing</strong>」（維持舊客戶），最後再利用「<strong>Lookalike</strong>」去找出有可能會購物的下一波新客源（再度開發新客），最後形成一個自然地反覆循環直到市場飽和為止。那剛剛提到的這三個英文名詞分別是指什麼呢？</p>
-<ol>
-<li><p>Interests（興趣或行為）：<br>看到下面這張圖，其實我們可以直觀的將目標受眾可能有的興趣或行為輸入在上面，並且直接使用這些興趣及行為的使用者作為第一波新客受眾。</p>
-<blockquote>
-<p><img src="https://sean.life/images/1486320652127.png" alt="image"></p>
-</blockquote>
-<p>而旁邊也有雷達告訴我們這樣的受眾會不會太廣泛或太稀少</p>
-<blockquote>
-<p><img src="https://sean.life/images/1486320862539.png" alt="image"></p>
-</blockquote>
-<p>投放個一周左右，我們可能就可以開始做廣告的優化囉！像是更換其他廣告素材或吸睛圖片來保持廣告的吸睛度！</p>
-</li>
-<li><p>Remarketing（再行銷）：<br>有穩定的流量來源之後，我們除了持續優化廣告素材或出價方式之外，也可將我們的廣告受眾更限縮，讓成效更精確。如同上一個步驟，我們可能已經得到了一些穩定的流量，這些流量之中我們可以將他們區分成幾種人像是：「有逛網站商品但沒做任何事的人」、「有逛網站且有加入會員但沒購物的人」、「已經完成購物的人」。<br>那接下來我們就可以對這三種人做三種不同的『再行銷』：譬如投放「加入會員即可獲得購物金的優惠」給「有逛網站商品但沒做任何事的人」；投放「舊會員購物即可獲得 VIP 贈品」給「有逛網站且有加入會員但沒購物的人」；投放「購物積點活動，期限內買越多折越多」給「已經完成購物的人」。<br>也就是透過分類流量，投遞他們那群人想要的誘因給予他們，同時又能持續維持舊客戶回流，成本也會比開發新客來的低！</p>
-</li>
-<li><p>Lookalike（類似受眾）：<br>類似受眾是直接將我們之前已經建立好的「舊受眾」，借助 Facebook 的分析歸類能力來圈出新的可能客源。但就因為只是“類似”，所以我們得用「行為最明確的受眾」才比較能得到比較符合的類似受眾，因此在這個例子之中就是用「已經完成購物的人」去做「Lookalike 類似受眾」會是最佳的選擇。</p>
-<blockquote>
-<p><img src="https://sean.life/images/1486367113995.png" alt="image"></p>
-</blockquote>
-</li>
-</ol>
-<p>除了上面這三種類別之外，廣義來講的話，其實「版位」也被我歸類為受眾的一部份，舉例來說像是某些傳統電商網站的手機購物體驗並不好，那就會不建議投放「行動裝置」的受眾，只需投放「桌面版使用者」就可以了。而對於其他的網站來說，也會建議將「桌面版」及「行動裝置」分開投放，畢竟兩者的使用者體驗不同的話，所能接受的廣告類型也會不相同。</p>
-<blockquote>
-<p>所以受眾策略總結來說大概會如下圖：<br><img src="https://sean.life/images/1487060872786.png" alt="image"></p>
-</blockquote>
-</li>
-<li><p>出價方式：<br>追求流量、轉換、品牌知名度、互動廣告、表單廣告…  等各種不同的廣告種類其實就代表著不同的出價方式。舉例來說，如果我們心中真正的目標是「透過廣告讓使用者導入網站進行會員註冊」，那我們就應該找出「單位成本最低的會員註冊」廣告是哪一個，接著一般人的直覺可能會想說，那『行銷活動』我們就使用「轉換」為目標的行銷活動來進行投放就好啦？但其實以「流量」或「品牌知名度」為目標的行銷活動也有可能達到這個效果，我們得試跑之後並計算真正的「會員註冊的單位成本」實際是多少才能真正比較出最有效益的廣告。</p>
-<p>而到了下一層『廣告組合』，其實也有不同的收費方法，像是以目標為「流量」的行銷活動之下，可能就有「CPC」、「CPM」兩種收費方式，而這兩種方式我們也得互相比較其「單位成本最低的會員註冊」廣告是哪一種才行。<br>而千萬要記住，投標價金額絕對不要選「自動」，因為自動的絕對不便宜啊！記得點開「手動」，設置比 Facebook 建議的金額還低一點的金額就行了。但如果投放了一兩天，結果廣告一點曝光或點擊都沒有，可能就要看看是不是出的價格太低囉！</p>
-<blockquote>
-<p><img src="https://sean.life/images/1486319083389.png" alt="image"></p>
-</blockquote>
-<p>這裡還有個「獲得最佳投放效果」的選項，這個優化效果和我們前面提到的競價機制很有關係，如果我們在追求「進行會員註冊」，那自然只能選擇以「連結」來優化的選項，畢竟只追求曝光的話相對就很難保證看到廣告的人都有點進來網站了。</p>
-<blockquote>
-<p><img src="https://sean.life/images/1486319181286.png" alt="image"></p>
-</blockquote>
-</li>
-</ul>
-<p>講完了影響最重大的三個變因，剩下的我們就得 Case by Case 的靠實驗的精神去找出最穩固的投放組合了！畢竟根據預算的不同、產業的不同，實在沒有絕對的投放組合啊！只能說多就盡量多看看大家的經驗或教學，並在投放後查看成效做改善囉，像是 Cacafly 媒體集團旗下的網路投放部落格 adHub《<a href="http://blog.ad-hub.net/index.php?s=Advertising+Strategies&amp;lang=tw" target="_blank" rel="external">Advertising Strategies</a>》系列都是不錯的參考文章。</p>
-<p>但究竟在網路廣告投放出去知後，我們究竟怎麼去查看成效呢？<br>那就得繼續觀看系列文的下一篇《<a href="">如何查看成效、如何優化與 A/B Test</a>》囉！</p>
-
-          
+          <h2 id="實戰！Facebook-自行操作投放影響因素篇"><a href="#實戰！Facebook-自行操作投放影響因素篇" class="headerlink" title="實戰！Facebook 自行操作投放影響因素篇"></a>實戰！Facebook 自行操作投放影響因素篇</h2><p>從理論上了解完整個數據追蹤的原理跟 Bid 廣告競價機制後，那我們可以終於開始來實戰了！
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/02/14/online-ad-serving-4-facebook-practice/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
