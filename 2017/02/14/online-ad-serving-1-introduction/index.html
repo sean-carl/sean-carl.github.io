@@ -1,0 +1,784 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italicLobster Two:300,300italic,400,400italic,700,700italicPT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+  <meta property="fb:admins" content="sean0806" />
+  <meta property="fb:app_id" content="974097499383900" />
+
+
+
+<meta name="description" content="網路廣告投放（一）概論篇：這裡僅是網路廣告投放的概論篇，之後也會再提到網路廣告投放的實戰篇。
+聲明：本人不是廣告系也沒念過廣告學，以下都只是自己的所見所聞跟想像，所以此堂課的觀念或許會有偏差，請多包容，而且這裡只講網路廣告的投放哦～XD
+1. 先來講講廣告本身：先來講講過去的廣告是怎麼運作的好了！「廣告」顧名思義其實就是「廣而告知」的意思，最早的廣告其實是只有聲音的，又稱叫賣廣告，到後來才衍生成了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="網路廣告投放（一）概論篇">
+<meta property="og:url" content="https://sean.life/2017/02/14/online-ad-serving-1-introduction/index.html">
+<meta property="og:site_name" content="Sean.Life">
+<meta property="og:description" content="網路廣告投放（一）概論篇：這裡僅是網路廣告投放的概論篇，之後也會再提到網路廣告投放的實戰篇。
+聲明：本人不是廣告系也沒念過廣告學，以下都只是自己的所見所聞跟想像，所以此堂課的觀念或許會有偏差，請多包容，而且這裡只講網路廣告的投放哦～XD
+1. 先來講講廣告本身：先來講講過去的廣告是怎麼運作的好了！「廣告」顧名思義其實就是「廣而告知」的意思，最早的廣告其實是只有聲音的，又稱叫賣廣告，到後來才衍生成了">
+<meta property="og:image" content="https://sean.life/images/1486391556081.png">
+<meta property="og:image" content="https://sean.life/images/1486391561709.png">
+<meta property="og:image" content="https://sean.life/images/1486391578207.png">
+<meta property="og:image" content="https://sean.life/images/1486391589425.png">
+<meta property="og:image" content="https://sean.life/images/1486383277964.png">
+<meta property="og:image" content="https://sean.life/images/1486383306216.png">
+<meta property="og:image" content="https://sean.life/images/1486840109828.png">
+<meta property="og:image" content="https://sean.life/images/1486840135926.png">
+<meta property="og:image" content="https://sean.life/images/1486840157554.png">
+<meta property="og:image" content="https://sean.life/images/1486840194435.png">
+<meta property="og:image" content="https://sean.life/images/1486840217408.png">
+<meta property="og:updated_time" content="2017-02-15T09:13:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="網路廣告投放（一）概論篇">
+<meta name="twitter:description" content="網路廣告投放（一）概論篇：這裡僅是網路廣告投放的概論篇，之後也會再提到網路廣告投放的實戰篇。
+聲明：本人不是廣告系也沒念過廣告學，以下都只是自己的所見所聞跟想像，所以此堂課的觀念或許會有偏差，請多包容，而且這裡只講網路廣告的投放哦～XD
+1. 先來講講廣告本身：先來講講過去的廣告是怎麼運作的好了！「廣告」顧名思義其實就是「廣而告知」的意思，最早的廣告其實是只有聲音的，又稱叫賣廣告，到後來才衍生成了">
+<meta name="twitter:image" content="https://sean.life/images/1486391556081.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://sean.life/2017/02/14/online-ad-serving-1-introduction/"/>
+
+  <title> 網路廣告投放（一）概論篇 | Sean.Life </title>
+
+  <script type="text/javascript">
+    var host="sean.life";
+    if ((host == window .location.host) && ( window .location.protocol != "https:" ))
+        window.location.protocol ="https";
+  </script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '974097499383900',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_tw/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-84331927-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sean.Life</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Sean.Life</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                網路廣告投放（一）概論篇
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2017-02-14T16:48:02+08:00" content="2017-02-14">
+              2017-02-14
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/14/online-ad-serving-1-introduction/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://sean.life/2017/02/14/online-ad-serving-1-introduction/" itemprop="commentsCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+            &nbsp; | &nbsp;
+            <div class="fb-like" data-layout="button_count" data-share="true"></div>
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="網路廣告投放（一）"><a href="#網路廣告投放（一）" class="headerlink" title="網路廣告投放（一）"></a>網路廣告投放（一）</h1><h2 id="概論篇："><a href="#概論篇：" class="headerlink" title="概論篇："></a>概論篇：</h2><p>這裡僅是網路廣告投放的概論篇，之後也會再提到網路廣告投放的實戰篇。</p>
+<p>聲明：本人不是廣告系也沒念過廣告學，以下都只是自己的所見所聞跟想像，所以此堂課的觀念或許會有偏差，請多包容，而且這裡只講網路廣告的投放哦～XD</p>
+<h3 id="1-先來講講廣告本身："><a href="#1-先來講講廣告本身：" class="headerlink" title="1. 先來講講廣告本身："></a>1. 先來講講廣告本身：</h3><p>先來講講過去的廣告是怎麼運作的好了！<br>「廣告」顧名思義其實就是「廣而告知」的意思，最早的廣告其實是只有聲音的，又稱叫賣廣告，到後來才衍生成了有點創意或是藝術設計的各種靜態跟動態的視覺廣告。</p>
+<p>「廣告投放」其實就是將這些廣告置放在各種媒介來傳播給大眾。 而過往年代中，廣告主想要投放廣告最常見的方式就是委託「代理商」或是自行進行「媒體採購」後，就能將「廣告投放」出去，於似乎代理商那邊就會有一張 CUE 表來查看各媒體或廣告的表現跟花費。而傳統的媒體可能就是幾個重要的電視台或報章雜誌，掌握這些媒體幾乎就可以掌握大部分的群眾。</p>
+<p>在網路剛興起之時，這些大型網站跟電視台基本上也沒有兩樣，因此若是想要購買網站上的某個頭版版位，廣告主也僅須委託代理商或是自行進行接洽即可買下版位。這些版位因為閱讀受眾多，所以往往價格昂貴。</p>
+<p>而在技術日益演進之下，網路廣告進展到了新的世代 - RTB 世代（Real Time Bidding 即時競價技術），擁有 RTB 技術的平台將所有的廣告版位集合起來統一管理並競價，廣告主在採購媒體的時候便可以不需要再花巨額買下不知道效果到底如何的「固定版位」，取而代之的是用較有實際效益的分批買下觀看這些廣告版位的「人」，我們稱之為廣告『受眾』。 </p>
+<p>廣告也不再是以「A版位每個月多少錢」來決定售價，而是以「每次曝光成本CPM、每次點擊成本CPC、每次轉換成本CPA…等指標」來計價。</p>
+<p>雖然不是購買版位，但廣告仍然是有版位或種類之分的，以下是常見的例子：</p>
+<ul>
+<li>搜尋入口 關鍵字搜尋廣告 Search Ads<blockquote>
+<p><img src="https://sean.life/images/1486391556081.png" alt="image"></p>
+</blockquote>
+</li>
+<li>媒體網站 橫幅、蓋版廣告 Banner Ads<blockquote>
+<p><img src="https://sean.life/images/1486391561709.png" alt="image"></p>
+</blockquote>
+</li>
+<li>Facebook 側邊欄廣告、動態原生廣告<blockquote>
+<p><img src="https://sean.life/images/1486391578207.png" alt="image"><img src="https://sean.life/images/1486391589425.png" alt="image"></p>
+</blockquote>
+</li>
+<li>行動手機 APP 蓋屏廣告、橫幅廣告<blockquote>
+<p><img src="https://sean.life/images/1486383277964.png" alt="image"><img src="https://sean.life/images/1486383306216.png" alt="image"></p>
+</blockquote>
+</li>
+</ul>
+<p>既然講到計價方式，那就該來解釋解釋這些名詞背後真正的含意囉：</p>
+<h3 id="2-各種計價名詞解釋："><a href="#2-各種計價名詞解釋：" class="headerlink" title="2. 各種計價名詞解釋："></a>2. 各種計價名詞解釋：</h3><p>這邊只列出業界常用的幾種指標，我們在買廣告的時候會以這些成本去計價，這樣廣告主便可拿捏要花多少的預算來達到什麼樣的指標。</p>
+<ul>
+<li><p>CPC：Cost Per Click 每次點擊成本，也就是『受眾』看到廣告後，真正去點擊廣告的費用。</p>
+</li>
+<li><p>CPA：Cost Per Action 每次行動成本、每次轉換成本，也就是『受眾』看到廣告後，真正去點擊廣告並行動的價格。這裡的行動跟轉換很廣義，狹義的還可分為註冊、下單、下載、按讚、分享…就看各個組織的定義方式。</p>
+</li>
+<li><p>CPM：Cost Per 1000 Impressions 每千次曝光成本，也就是每一千次『受眾』看到廣告後的成本。</p>
+</li>
+</ul>
+<p>對於初學者來說，我們可以先了解這三個常用的名詞就好，了解後就可以估算一下需要花多少的預算來達到自己的初期目標！除此之外，另一個重要的點是，藉由各種不同的出價方式，來計算出對自己最有利的的廣告出價方法。 </p>
+<p>真正了解這三個指標後，我們終於可以進入廣告投放的階段了。</p>
+<p>但是…現在好多好多平台可以用啊…又有各家自稱很厲害的業者，到底怎麼分辨呢？ 那我們就得先分清楚每家業者到底是什麼性質了：</p>
+<h3 id="3-各種好像超強平台"><a href="#3-各種好像超強平台" class="headerlink" title="3. 各種好像超強平台"></a>3. 各種好像超強平台</h3><p>在網路崛起之前，理所當然的也有許多的電視台或是報章雜誌，媒體採購這項任務的其實也相當複雜，因此「媒體代理商、廣告代理商」也顯得相當重要，因此在媒體採購或廣告投放時我們也可以直接經由代理商來處理。</p>
+<p>但是到了網路世代，事情就更複雜了，得先分別從廣告版位的供給方跟需求方來講起。首先是供給方，到了網路世代，出現了越來越多的網站跟媒體他們也想靠網路廣告置放來賺取收益，這時就開始出現了仲介角色「AD Network 廣告聯播網」來集合這些網站跟媒體的廣告版位。</p>
+<blockquote>
+<p><img src="https://sean.life/images/1486840109828.png" alt="image"></p>
+</blockquote>
+<p>隨著世代的演進，太多的新媒體或網站出現，也越來越多的仲介（就是指 Network）想搶這個生意，於是「SSP 供給方平台」就這樣出現了，SSP 統整了背後的廣告聯播網或是媒體，並主打能夠『利用技術幫助 <strong>媒體主</strong> 實現利益最大化』，利用技術來優化 SSP 內串接的所有廣告版位。</p>
+<blockquote>
+<p><img src="https://sean.life/images/1486840135926.png" alt="image"></p>
+</blockquote>
+<p>再來是需求方，進入網路世代，廣告主將過往花在電視台、報章雜誌上的資金轉移到網路上，但網路上這麼多的媒體，怎麼知道好不好呢？網路世界變化得太快，就連代理商自己也都不知道！這時候就出現了 「DSP 需求方平台」來做這筆生意啦～ DSP 將所有廣告主或代理商的需求整合在一起，並主打『利用技術幫助 <strong>廣告主</strong> 實現利益最大化』。</p>
+<blockquote>
+<p><img src="https://sean.life/images/1486840157554.png" alt="image"></p>
+</blockquote>
+<p>但是我們知道供給和需求並需要有一個平衡，買賣才會發生！那誰要來當 DSP 和 SSP 的撮合角色呢？那就是「AD Exchange 廣告交易平台」了！<del>至於你問我是雞生蛋還是蛋生雞這種誰先誰後的供需誰先出現的問題我就不知道了….</del></p>
+<blockquote>
+<p><img src="https://sean.life/images/1486840194435.png" alt="image"></p>
+</blockquote>
+<p>那 Google 大神是什麼角色呢？我認為他就是幾乎通包了！在供給方 Google Adsense 可能是過往統一媒體的一個方式，但需求方又可以透過 Google Adwords 去直接投放廣告。或是供需雙方都可直接經由 Google 收購的 DoubleClick 來做交易，Google 大神真的是萬能啊～ 旗下還有 Youtube 這個近乎可稱為另一個獨立媒體，廣告主也可直接經由 Adwords 來投放 Youtube 廣告。</p>
+<p>但是我們最愛用的 Facebook 更是萬惡之神，他不統一這些媒體，反而自己創造了媒體，有了全世界最多的受眾之後，在自己建立自己的廣告系統、廣告版位，自己就是最可怕的大平台，對岸的 WeChat 我想也不遑多讓。</p>
+<p>所以大概可以畫成這個圖：</p>
+<blockquote>
+<p><img src="https://sean.life/images/1486840217408.png" alt="image"></p>
+</blockquote>
+<p>請注意，左邊到右邊絕對都有層層的仲介，每一層與層之前都可以有互相的合作關係、分潤關係、或是買賣關係。</p>
+<p>所以廣告主應該端看自己的需求，決定要接洽中間哪一層的仲介。<br>而絕大多數的廣告主，其實都只會碰到全球知名的廣告代理商、代理 XXXXX 平台的代理商、或 DSP 及 ADexchange！那在接觸這些業者之前，我們究竟要委外還是自操就好呢？</p>
+<h3 id="4-究竟要委外還是自操就好呢？"><a href="#4-究竟要委外還是自操就好呢？" class="headerlink" title="4. 究竟要委外還是自操就好呢？"></a>4. 究竟要委外還是自操就好呢？</h3><p>做行銷時我們得依照目標，來設定我們想將廣告放到哪些相對應的媒體上，我們可以直接找中間的這些代理商或是直接使用像是 Facebook、Google 或 Yahoo 等大平台工具來幫我們推動行銷方案。而代理商有的是代理國外知名的 DSP、ADexchange 或是大平台系統、又或是再直接委託國內外的 DSP 或更上游的代理商操刀。究竟自己來（In-House）跟委外（Outsourcing）哪個好呢？這當沒有完美的答案，不過可以稍微簡列一下委外的優缺點</p>
+<ul>
+<li><p>委外的優點<br>1.專門做廣告代理的業者肯定能提供給內部團隊創意上的廣度<br>2.外部業者廣告投放的的經驗值多，可能不需要試錯即可找到很棒的投放成本<br>3.技術深厚的外部團隊可能還擁有大量的數據資料，所以能更幫助廣告投放</p>
+</li>
+<li><p>委外的缺點<br>1.委外的話溝通成本絕對是大大增加，不管是開會還是即時通訊都麻煩<br>2.長期委外可能導致團隊內部本身在這一塊完全沒有心得增長<br>3.許多產業 know-how 是外部公司不知道，或是內部不想分享給外部公司的</p>
+</li>
+</ul>
+<p>綜觀以上，或許在廣告投放這一塊最好的解決辦法或許是聘請有經驗的「顧問」訓練 In-Hosue 的團隊，或是使用 In-House + Outsourcing 來提高溝通效率以及彼此分享 know-how 並互相學習，這樣也可解決以上的缺點！</p>
+<p>了解完概論，如果你考慮自操看看，那你可以繼續把這系列都看完，這個系列的實戰我們會以 Facebook 為例，因此下一篇就是先來介紹一下 Facebook 平台的簡介囉：《<a href="">Facebook 廣告平台 - 介面及功能簡介篇</a>》</p>
+<h2 id="資料參考來源："><a href="#資料參考來源：" class="headerlink" title="資料參考來源："></a>資料參考來源：</h2><p>《<a href="https://www.zhihu.com/question/23458646" target="_blank" rel="external">DSP、SSP、RTB 是怎样的一个过程？</a>》<br>《<a href="https://www.zhihu.com/question/20320181" target="_blank" rel="external">为什么会出现 Ad exchange？</a>》<br>《<a href="https://blog.dcplus.com.tw/marketing-knowledge/growther/12911" target="_blank" rel="external">四大網路廣告聯播網比一比</a>》<br>《<a href="http://www.techxue.com/techxue-5069-1.html" target="_blank" rel="external">解读 Ad Network、Ad Exchange、DSP、SSP、RTB 和DMP 是什么？</a>》<br>《<a href="http://wiki.mbalib.com/zh-tw/%E5%B9%BF%E5%91%8A" target="_blank" rel="external">何謂廣告</a>》<br>《<a href="http://wiki.mbalib.com/zh-tw/%E5%AA%92%E4%BD%93%E8%B4%AD%E4%B9%B0" target="_blank" rel="external">媒體購買</a>》</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/14/online-ad-serving-3-facebook-bid/" rel="next" title="網路廣告投放（三）Facebook Bid 廣告競價機制篇">
+                <i class="fa fa-chevron-left"></i> 網路廣告投放（三）Facebook Bid 廣告競價機制篇
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/15/online-ad-serving-5-conclusion/" rel="prev" title="網路廣告投放（五）實戰！如何查看成效、如何優化與 A/B Test 篇">
+                網路廣告投放（五）實戰！如何查看成效、如何優化與 A/B Test 篇 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57f9389ddc43c9d4" async = "async" ></script>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="fb-comments"
+           data-href="https://sean.life/2017/02/14/online-ad-serving-1-introduction/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/sean.png"
+               alt="Sean Huang" />
+          <p class="site-author-name" itemprop="name">Sean Huang</p>
+          <p class="site-description motion-element" itemprop="description">This is Sean's personal blog for sharing his experience and life.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分類</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">標籤</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sean-carl" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github-square"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/sean0806" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook-square"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:c02011carl@gmail.com" target="_blank" title="Gmail">
+                  
+                    <i class="fa fa-fw fa-google"></i>
+                  
+                  Gmail
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/sean0806" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin-square"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/c02011carl" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                  Instagram
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#網路廣告投放（一）"><span class="nav-number">1.</span> <span class="nav-text">網路廣告投放（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概論篇："><span class="nav-number">1.1.</span> <span class="nav-text">概論篇：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-先來講講廣告本身："><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 先來講講廣告本身：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-各種計價名詞解釋："><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 各種計價名詞解釋：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-各種好像超強平台"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. 各種好像超強平台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-究竟要委外還是自操就好呢？"><span class="nav-number">1.1.4.</span> <span class="nav-text">4. 究竟要委外還是自操就好呢？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#資料參考來源："><span class="nav-number">1.2.</span> <span class="nav-text">資料參考來源：</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sean Huang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

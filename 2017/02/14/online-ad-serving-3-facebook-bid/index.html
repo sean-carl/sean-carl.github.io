@@ -1,0 +1,725 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italicLobster Two:300,300italic,400,400italic,700,700italicPT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+  <meta property="fb:admins" content="sean0806" />
+  <meta property="fb:app_id" content="974097499383900" />
+
+
+
+<meta name="description" content="網路廣告投放（三）Facebook Bid 廣告競價機制篇：關於 Bid 的機制，網路上有幾篇解釋得不錯的文章，再加上一些 Facebook 官方文件，最後濃縮出以下內容！既然是簡化後，所以也只會大概列出投放會影響到的因素而已，想了解更詳細的都可以直接滑到最下面看看資料參考來源！
+在之前的概論篇我們有提到，網路廣告是即時競價制的，透過競價才能選出最重要、最適合的廣告推給最符合的使用者。而這個競價機">
+<meta property="og:type" content="article">
+<meta property="og:title" content="網路廣告投放（三）Facebook Bid 廣告競價機制篇">
+<meta property="og:url" content="https://sean.life/2017/02/14/online-ad-serving-3-facebook-bid/index.html">
+<meta property="og:site_name" content="Sean.Life">
+<meta property="og:description" content="網路廣告投放（三）Facebook Bid 廣告競價機制篇：關於 Bid 的機制，網路上有幾篇解釋得不錯的文章，再加上一些 Facebook 官方文件，最後濃縮出以下內容！既然是簡化後，所以也只會大概列出投放會影響到的因素而已，想了解更詳細的都可以直接滑到最下面看看資料參考來源！
+在之前的概論篇我們有提到，網路廣告是即時競價制的，透過競價才能選出最重要、最適合的廣告推給最符合的使用者。而這個競價機">
+<meta property="og:image" content="https://sean.life/images/1487007756184.png">
+<meta property="og:updated_time" content="2017-02-15T09:16:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="網路廣告投放（三）Facebook Bid 廣告競價機制篇">
+<meta name="twitter:description" content="網路廣告投放（三）Facebook Bid 廣告競價機制篇：關於 Bid 的機制，網路上有幾篇解釋得不錯的文章，再加上一些 Facebook 官方文件，最後濃縮出以下內容！既然是簡化後，所以也只會大概列出投放會影響到的因素而已，想了解更詳細的都可以直接滑到最下面看看資料參考來源！
+在之前的概論篇我們有提到，網路廣告是即時競價制的，透過競價才能選出最重要、最適合的廣告推給最符合的使用者。而這個競價機">
+<meta name="twitter:image" content="https://sean.life/images/1487007756184.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://sean.life/2017/02/14/online-ad-serving-3-facebook-bid/"/>
+
+  <title> 網路廣告投放（三）Facebook Bid 廣告競價機制篇 | Sean.Life </title>
+
+  <script type="text/javascript">
+    var host="sean.life";
+    if ((host == window .location.host) && ( window .location.protocol != "https:" ))
+        window.location.protocol ="https";
+  </script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '974097499383900',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_tw/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-84331927-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sean.Life</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Sean.Life</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                網路廣告投放（三）Facebook Bid 廣告競價機制篇
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2017-02-14T16:47:31+08:00" content="2017-02-14">
+              2017-02-14
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/14/online-ad-serving-3-facebook-bid/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://sean.life/2017/02/14/online-ad-serving-3-facebook-bid/" itemprop="commentsCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+            &nbsp; | &nbsp;
+            <div class="fb-like" data-layout="button_count" data-share="true"></div>
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="網路廣告投放（三）"><a href="#網路廣告投放（三）" class="headerlink" title="網路廣告投放（三）"></a>網路廣告投放（三）</h1><h2 id="Facebook-Bid-廣告競價機制篇："><a href="#Facebook-Bid-廣告競價機制篇：" class="headerlink" title="Facebook Bid 廣告競價機制篇："></a>Facebook Bid 廣告競價機制篇：</h2><p>關於 Bid 的機制，網路上有幾篇解釋得不錯的文章，再加上一些 Facebook 官方文件，最後濃縮出以下內容！既然是簡化後，所以也只會大概列出投放會影響到的因素而已，想了解更詳細的都可以直接滑到最下面看看資料參考來源！</p>
+<p>在之前的概論篇我們有提到，網路廣告是即時競價制的，透過競價才能選出最重要、最適合的廣告推給最符合的使用者。而這個競價機制採用的值是怎麼算出來的呢？我整理之後發現公式如下：</p>
+<blockquote>
+<p>總競標價格 = 最終出價 ( 廣告主投標價*函數(Pacing) ) + 廣告質量分數</p>
+</blockquote>
+<p>『總競標價格』就是最後拿到平台上競價的一個值，這個值是由『最終出價』和『廣告質量分數』所加總得出。而再把他們拆解開來的話，其實主要就是受到三個因素影響：「廣告主投標價」、「廣告相關度」、「廣告本身質量」。</p>
+<blockquote>
+<p><img src="https://sean.life/images/1487007756184.png" alt="image"></p>
+</blockquote>
+<ul>
+<li><p>廣告主投標價：<br>這個金額就是我們廣告主所能投遞的最大單價，單位可以是 CPC、CPA、CPM、oCPM，出價金額的高低和出價的方法會影響到最後運算公式時的值。而這些金額會通通通過函數 (<a href="https://developers.facebook.com/docs/marketing-api/pacing?locale=zh_TW" target="_blank" rel="external">Pacing Algorithms</a>) ，轉化為單位同為 per Impression 的『最終出價』。那我們除了更改廣告主投標價之外，還要注意什麼呢？<br>這時候就要注意其實我們可以再把最終出價拆解出簡單的公式：</p>
+<blockquote>
+<p>最終出價 ( per Impression ) = Optimal Bid per Impression＊相關率</p>
+</blockquote>
+<p>相關率就會和我們的廣告相關度非常有關！</p>
+</li>
+<li><p>廣告相關度：<br>指的當然就是由 Facebook 預測廣告跟受眾的相關程度，像是 預測受眾採取動作的機率（ CTR、CVR、VTR 等等），以及預測受眾與廣告的相關度。所以簡單來說我們可以簡略推測出下列三個公式：</p>
+<blockquote>
+<p>For CPC,    最終出價 = Optimal Bid＊CTR<br>For CPA,     最終出價 = Optimal Bid＊CVR＊CTR<br>For CPM,    最終出價 = Optimal Bid＊VTR</p>
+</blockquote>
+<p>也就是說我們可以透過提高廣告對受眾的相關度，進而提高『最終出價』，最後提高我們的總競價的值！</p>
+</li>
+<li>廣告本身質量：<br>廣告質量分數受到最大的影響就是「廣告的本身質量」了，這個質量是 Facebook 會去計算像是預期的正面回饋、預期的負面回饋、動態演算法中的比重、廣告連結的好壞，最後去評價一個廣告本身的分數。而 Facebook 官方沒說出的潛規則是這些廣告本身的分數也會進而影響「廣告組合的質量」，更甚至是影響到「帳號品質」，而這最終都會影響到『廣告質量分數』。p.s 這也是自操的表現很難追上某些優秀代理商或技術廠商的原因，因為他們的帳號品質已經領先我們太多了！</li>
+</ul>
+<p>如果你有去看 Pacing 演算法的官方解說、或是有興趣看下方的資料參考來源的話，或許會看到我沒在這篇文提及的關鍵字眼「VCG競價機制」及「GSP競價機制」。簡單來說，Facebook 採用的是 VCG 競價機制，這種機制可以達到整體社會效益的最大化（全體使用者、及廣告主+廣告平台本身）。而 Google、百度是採用 GSP 競價機制，這種機制就是單純讓廣告主及平台受惠，但規則簡單易懂。 </p>
+<p>其實讀了這麼多資料，大家雖然寫得很詳細，但太多的名詞中可能又因為沒有使用一模一眼的字眼，導致公式與公式間對不太起來。上述是我將內容內化後，用自己的文字簡化出的公式（希望我沒有搞錯），希望把複雜的 Bid 廣告競價機制這樣簡單化後，能讓更多人都能看懂影響最終的因素為何，以及為什麼是這樣～ 這篇就到此結束囉，感謝收看！了解理論上廣告機制背後牽涉的因素後，那實作上我們要去控制哪些變因來讓廣告表現更好呢？那就得看下一篇《 <a href="">實戰！自行操作投放影響因素篇</a> 》囉</p>
+<h2 id="資料參考來源："><a href="#資料參考來源：" class="headerlink" title="資料參考來源："></a>資料參考來源：</h2><p>Facebook 官方手冊：《<a href="https://www.facebook.com/business/help/430291176997542" target="_blank" rel="external">瞭解投標及廣告競價的運作方式</a>》《<a href="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xfa1/t39.2365-6/12057037_411927955684886_99621256_n.pdf" target="_blank" rel="external">Facebook Auction 101</a>》《<a href="https://developers.facebook.com/docs/marketing-api/pacing?locale=zh_TW" target="_blank" rel="external">Pacing Algorithms</a>》</p>
+<p>其餘網路大大們：《<a href="http://www.akichy.com/archives/618#comment-84" target="_blank" rel="external">淺談 Facebook 廣告競價機制</a>》《<a href="https://zhuanlan.zhihu.com/p/23698265?refer=yangjuan" target="_blank" rel="external">FACEBOOK广告投放教程 竞价篇（一）</a>》《<a href="http://www.smartly.io/blog/bid-optimization-pacing-on-facebook-explained" target="_blank" rel="external">Bid Optimization: Pacing on Facebook Explained</a>》</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/14/online-ad-serving-2-facebook-introdcution/" rel="next" title="網路廣告投放（二）Facebook 廣告平台 - 介面及功能簡介篇">
+                <i class="fa fa-chevron-left"></i> 網路廣告投放（二）Facebook 廣告平台 - 介面及功能簡介篇
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/14/online-ad-serving-1-introduction/" rel="prev" title="網路廣告投放（一）概論篇">
+                網路廣告投放（一）概論篇 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57f9389ddc43c9d4" async = "async" ></script>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="fb-comments"
+           data-href="https://sean.life/2017/02/14/online-ad-serving-3-facebook-bid/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/sean.png"
+               alt="Sean Huang" />
+          <p class="site-author-name" itemprop="name">Sean Huang</p>
+          <p class="site-description motion-element" itemprop="description">This is Sean's personal blog for sharing his experience and life.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分類</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">標籤</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sean-carl" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github-square"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/sean0806" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook-square"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:c02011carl@gmail.com" target="_blank" title="Gmail">
+                  
+                    <i class="fa fa-fw fa-google"></i>
+                  
+                  Gmail
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/sean0806" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin-square"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/c02011carl" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                  Instagram
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#網路廣告投放（三）"><span class="nav-number">1.</span> <span class="nav-text">網路廣告投放（三）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Facebook-Bid-廣告競價機制篇："><span class="nav-number">1.1.</span> <span class="nav-text">Facebook Bid 廣告競價機制篇：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#資料參考來源："><span class="nav-number">1.2.</span> <span class="nav-text">資料參考來源：</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sean Huang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

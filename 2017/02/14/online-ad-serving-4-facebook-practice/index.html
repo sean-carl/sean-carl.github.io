@@ -1,0 +1,765 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italicLobster Two:300,300italic,400,400italic,700,700italicPT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+  <meta property="fb:admins" content="sean0806" />
+  <meta property="fb:app_id" content="974097499383900" />
+
+
+
+<meta name="description" content="網路廣告投放（四）實戰！Facebook 自行操作投放影響因素篇從理論上了解完整個數據追蹤的原理跟 Bid 廣告競價機制後，那我們可以終於開始來實戰了！ 既然是自操，我們大概能控制的變因其實主要來講就是三種：『廣告素材』、『廣告受眾』及『出價方式』：
+
+
+
+
+廣告素材：廣告的文案、圖片等素材在這兩年變成顯學，也顯得越來越重要！但老實說這也是我最不拿手的地方，沒什麼可以分享給各位的，只好直接轉貼一下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="網路廣告投放（四）實戰！Facebook 自行操作投放影響因素篇">
+<meta property="og:url" content="https://sean.life/2017/02/14/online-ad-serving-4-facebook-practice/index.html">
+<meta property="og:site_name" content="Sean.Life">
+<meta property="og:description" content="網路廣告投放（四）實戰！Facebook 自行操作投放影響因素篇從理論上了解完整個數據追蹤的原理跟 Bid 廣告競價機制後，那我們可以終於開始來實戰了！ 既然是自操，我們大概能控制的變因其實主要來講就是三種：『廣告素材』、『廣告受眾』及『出價方式』：
+
+
+
+
+廣告素材：廣告的文案、圖片等素材在這兩年變成顯學，也顯得越來越重要！但老實說這也是我最不拿手的地方，沒什麼可以分享給各位的，只好直接轉貼一下">
+<meta property="og:image" content="https://sean.life/images/1487060798370.png">
+<meta property="og:image" content="https://sean.life/images/1487060542301.png">
+<meta property="og:image" content="https://sean.life/images/1486320652127.png">
+<meta property="og:image" content="https://sean.life/images/1486320862539.png">
+<meta property="og:image" content="https://sean.life/images/1486367113995.png">
+<meta property="og:image" content="https://sean.life/images/1487060872786.png">
+<meta property="og:image" content="https://sean.life/images/1486319083389.png">
+<meta property="og:image" content="https://sean.life/images/1486319181286.png">
+<meta property="og:updated_time" content="2017-02-15T09:17:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="網路廣告投放（四）實戰！Facebook 自行操作投放影響因素篇">
+<meta name="twitter:description" content="網路廣告投放（四）實戰！Facebook 自行操作投放影響因素篇從理論上了解完整個數據追蹤的原理跟 Bid 廣告競價機制後，那我們可以終於開始來實戰了！ 既然是自操，我們大概能控制的變因其實主要來講就是三種：『廣告素材』、『廣告受眾』及『出價方式』：
+
+
+
+
+廣告素材：廣告的文案、圖片等素材在這兩年變成顯學，也顯得越來越重要！但老實說這也是我最不拿手的地方，沒什麼可以分享給各位的，只好直接轉貼一下">
+<meta name="twitter:image" content="https://sean.life/images/1487060798370.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://sean.life/2017/02/14/online-ad-serving-4-facebook-practice/"/>
+
+  <title> 網路廣告投放（四）實戰！Facebook 自行操作投放影響因素篇 | Sean.Life </title>
+
+  <script type="text/javascript">
+    var host="sean.life";
+    if ((host == window .location.host) && ( window .location.protocol != "https:" ))
+        window.location.protocol ="https";
+  </script>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '974097499383900',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_tw/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-84331927-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sean.Life</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Sean.Life</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                網路廣告投放（四）實戰！Facebook 自行操作投放影響因素篇
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
+            <time itemprop="dateCreated" datetime="2017-02-14T16:46:40+08:00" content="2017-02-14">
+              2017-02-14
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/14/online-ad-serving-4-facebook-practice/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://sean.life/2017/02/14/online-ad-serving-4-facebook-practice/" itemprop="commentsCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+            &nbsp; | &nbsp;
+            <div class="fb-like" data-layout="button_count" data-share="true"></div>
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="網路廣告投放（四）"><a href="#網路廣告投放（四）" class="headerlink" title="網路廣告投放（四）"></a>網路廣告投放（四）</h1><h2 id="實戰！Facebook-自行操作投放影響因素篇"><a href="#實戰！Facebook-自行操作投放影響因素篇" class="headerlink" title="實戰！Facebook 自行操作投放影響因素篇"></a>實戰！Facebook 自行操作投放影響因素篇</h2><p>從理論上了解完整個數據追蹤的原理跟 Bid 廣告競價機制後，那我們可以終於開始來實戰了！ 既然是自操，我們大概能控制的變因其實主要來講就是三種：『廣告素材』、『廣告受眾』及『出價方式』：</p>
+<blockquote>
+<p><img src="https://sean.life/images/1487060798370.png" alt="image"></p>
+</blockquote>
+<ul>
+<li><p>廣告素材：<br>廣告的文案、圖片等素材在這兩年變成顯學，也顯得越來越重要！但老實說這也是我最不拿手的地方，沒什麼可以分享給各位的，只好直接轉貼一下其他大大們的懶人包了：像是 Ryan 大的《<a href="https://goo.gl/LFm6uB" target="_blank" rel="external">廣告素材實戰攻略_Facebook 篇</a>》。值得一提的是，不管我們設計出多麽有效的「廣告組合」，裡面的廣告勢必會因為時間性而變得乏味（誰會一直點已經看過的廣告素材呢？）所以廣告素材無論再怎麼有創意，也應該要定期更換！</p>
+</li>
+<li><p>廣告受眾：<br>受眾是最需要用邏輯去構思的地方，究竟要怎麼找到所謂的目標客群呢？<br>我們可以以傳統的行銷學來思考，大概可用『開發新客』以及『維持舊客戶』的觀念來思考！</p>
+<blockquote>
+<p><img src="https://sean.life/images/1487060542301.png" alt="image"></p>
+</blockquote>
+<p>假設我們現在是剛起步的新電商（已埋放好 Facebook Pixel），在完全沒有舊客或是客源不足的情況下，我們可以就可以先從「<strong>Interests</strong>」開始著手（開發新客），接著有穩定觀站流量後進行「<strong>Remarketing</strong>」（維持舊客戶），最後再利用「<strong>Lookalike</strong>」去找出有可能會購物的下一波新客源（再度開發新客），最後形成一個自然地反覆循環直到市場飽和為止。那剛剛提到的這三個英文名詞分別是指什麼呢？</p>
+<ol>
+<li><p>Interests（興趣或行為）：<br>看到下面這張圖，其實我們可以直觀的將目標受眾可能有的興趣或行為輸入在上面，並且直接使用這些興趣及行為的使用者作為第一波新客受眾。</p>
+<blockquote>
+<p><img src="https://sean.life/images/1486320652127.png" alt="image"></p>
+</blockquote>
+<p>而旁邊也有雷達告訴我們這樣的受眾會不會太廣泛或太稀少</p>
+<blockquote>
+<p><img src="https://sean.life/images/1486320862539.png" alt="image"></p>
+</blockquote>
+<p>投放個一周左右，我們可能就可以開始做廣告的優化囉！像是更換其他廣告素材或吸睛圖片來保持廣告的吸睛度！</p>
+</li>
+<li><p>Remarketing（再行銷）：<br>有穩定的流量來源之後，我們除了持續優化廣告素材或出價方式之外，也可將我們的廣告受眾更限縮，讓成效更精確。如同上一個步驟，我們可能已經得到了一些穩定的流量，這些流量之中我們可以將他們區分成幾種人像是：「有逛網站商品但沒做任何事的人」、「有逛網站且有加入會員但沒購物的人」、「已經完成購物的人」。<br>那接下來我們就可以對這三種人做三種不同的『再行銷』：譬如投放「加入會員即可獲得購物金的優惠」給「有逛網站商品但沒做任何事的人」；投放「舊會員購物即可獲得 VIP 贈品」給「有逛網站且有加入會員但沒購物的人」；投放「購物積點活動，期限內買越多折越多」給「已經完成購物的人」。<br>也就是透過分類流量，投遞他們那群人想要的誘因給予他們，同時又能持續維持舊客戶回流，成本也會比開發新客來的低！</p>
+</li>
+<li><p>Lookalike（類似受眾）：<br>類似受眾是直接將我們之前已經建立好的「舊受眾」，借助 Facebook 的分析歸類能力來圈出新的可能客源。但就因為只是“類似”，所以我們得用「行為最明確的受眾」才比較能得到比較符合的類似受眾，因此在這個例子之中就是用「已經完成購物的人」去做「Lookalike 類似受眾」會是最佳的選擇。</p>
+<blockquote>
+<p><img src="https://sean.life/images/1486367113995.png" alt="image"></p>
+</blockquote>
+</li>
+</ol>
+<p>除了上面這三種類別之外，廣義來講的話，其實「版位」也被我歸類為受眾的一部份，舉例來說像是某些傳統電商網站的手機購物體驗並不好，那就會不建議投放「行動裝置」的受眾，只需投放「桌面版使用者」就可以了。而對於其他的網站來說，也會建議將「桌面版」及「行動裝置」分開投放，畢竟兩者的使用者體驗不同的話，所能接受的廣告類型也會不相同。</p>
+<blockquote>
+<p>所以受眾策略總結來說大概會如下圖：<br><img src="https://sean.life/images/1487060872786.png" alt="image"></p>
+</blockquote>
+</li>
+<li><p>出價方式：<br>追求流量、轉換、品牌知名度、互動廣告、表單廣告…  等各種不同的廣告種類其實就代表著不同的出價方式。舉例來說，如果我們心中真正的目標是「透過廣告讓使用者導入網站進行會員註冊」，那我們就應該找出「單位成本最低的會員註冊」廣告是哪一個，接著一般人的直覺可能會想說，那『行銷活動』我們就使用「轉換」為目標的行銷活動來進行投放就好啦？但其實以「流量」或「品牌知名度」為目標的行銷活動也有可能達到這個效果，我們得試跑之後並計算真正的「會員註冊的單位成本」實際是多少才能真正比較出最有效益的廣告。</p>
+<p>而到了下一層『廣告組合』，其實也有不同的收費方法，像是以目標為「流量」的行銷活動之下，可能就有「CPC」、「CPM」兩種收費方式，而這兩種方式我們也得互相比較其「單位成本最低的會員註冊」廣告是哪一種才行。<br>而千萬要記住，投標價金額絕對不要選「自動」，因為自動的絕對不便宜啊！記得點開「手動」，設置比 Facebook 建議的金額還低一點的金額就行了。但如果投放了一兩天，結果廣告一點曝光或點擊都沒有，可能就要看看是不是出的價格太低囉！</p>
+<blockquote>
+<p><img src="https://sean.life/images/1486319083389.png" alt="image"></p>
+</blockquote>
+<p>這裡還有個「獲得最佳投放效果」的選項，這個優化效果和我們前面提到的競價機制很有關係，如果我們在追求「進行會員註冊」，那自然只能選擇以「連結」來優化的選項，畢竟只追求曝光的話相對就很難保證看到廣告的人都有點進來網站了。</p>
+<blockquote>
+<p><img src="https://sean.life/images/1486319181286.png" alt="image"></p>
+</blockquote>
+</li>
+</ul>
+<p>講完了影響最重大的三個變因，剩下的我們就得 Case by Case 的靠實驗的精神去找出最穩固的投放組合了！畢竟根據預算的不同、產業的不同，實在沒有絕對的投放組合啊！只能說多就盡量多看看大家的經驗或教學，並在投放後查看成效做改善囉，像是 Cacafly 媒體集團旗下的網路投放部落格 adHub《<a href="http://blog.ad-hub.net/index.php?s=Advertising+Strategies&amp;lang=tw" target="_blank" rel="external">Advertising Strategies</a>》系列都是不錯的參考文章。</p>
+<p>但究竟在網路廣告投放出去知後，我們究竟怎麼去查看成效呢？<br>那就得繼續觀看系列文的下一篇《<a href="">如何查看成效、如何優化與 A/B Test</a>》囉！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/17/observation20170116/" rel="next" title="2016年末，中國猴塞雷，與 AI 的加速年！">
+                <i class="fa fa-chevron-left"></i> 2016年末，中國猴塞雷，與 AI 的加速年！
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/14/online-ad-serving-2-facebook-introdcution/" rel="prev" title="網路廣告投放（二）Facebook 廣告平台 - 介面及功能簡介篇">
+                網路廣告投放（二）Facebook 廣告平台 - 介面及功能簡介篇 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57f9389ddc43c9d4" async = "async" ></script>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="fb-comments"
+           data-href="https://sean.life/2017/02/14/online-ad-serving-4-facebook-practice/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/sean.png"
+               alt="Sean Huang" />
+          <p class="site-author-name" itemprop="name">Sean Huang</p>
+          <p class="site-description motion-element" itemprop="description">This is Sean's personal blog for sharing his experience and life.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分類</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">標籤</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sean-carl" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github-square"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/sean0806" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook-square"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:c02011carl@gmail.com" target="_blank" title="Gmail">
+                  
+                    <i class="fa fa-fw fa-google"></i>
+                  
+                  Gmail
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/sean0806" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin-square"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/c02011carl" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                  Instagram
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#網路廣告投放（四）"><span class="nav-number">1.</span> <span class="nav-text">網路廣告投放（四）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#實戰！Facebook-自行操作投放影響因素篇"><span class="nav-number">1.1.</span> <span class="nav-text">實戰！Facebook 自行操作投放影響因素篇</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sean Huang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
